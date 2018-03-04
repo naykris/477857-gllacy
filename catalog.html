@@ -2,16 +2,16 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Каталог-GlacyShop</title>
+    <title>Каталог - GlacyShop</title>
   </head>
   <body>
       <header class="main-header">
           <nav class="main-navigation">
               <a class="main-header-logo" href="index.html">
-                  <img src="img/logo.png" width="154" height="64" alt="Логотип Glacy Shop">
+                  <img src="img/logo.png" width="154" height="64" alt="Glacy Shop">
               </a>
               <ul class="site-navigation">
-                  <li><a class="down site-navigation-current">Каталог</a></li>
+                  <li><a class="site-navigation-item site-navigation-current">Каталог</a></li>
                   <li><a href="#">Доставка и оплата</a></li>
                   <li><a href="#">О Компании</a></li>
               </ul>
@@ -35,7 +35,7 @@
           <section class="catalog-filters">
              <h2 class="visually-hidden">Фильтры для выбора мороженого</h2>
               <!--Формы фильтров сортировки, есть селект с выпадающим списком-->
-              <button type="submit">Применить</button>
+              <button>Применить</button>
           </section>
           <section class="catalog">
               <h2 class="visually-hydden">Каталог сливочного мороженого</h2>
@@ -137,28 +137,22 @@
           </section>
       </main>
       <footer class="main-footer">
-          <div class="footer-social">
-              <ul>
-                  <li><a href="https://twitter.com">Твиттер</a></li>
-                  <li><a href="https://www.instagram.com">Инстаграм</a></li>
-                  <li><a href="https://www.facebook.com">Фейсбук</a></li>
-                  <li><a href="https://vk.com">Вконтакте</a></li>
+              <ul class="footer-social">
+                  <li><a class="social-tw" href="https://twitter.com">Твиттер</a></li>
+                  <li><a class="social-in" href="https://www.instagram.com">Инстаграм</a></li>
+                  <li><a class="social-fb" href="https://www.facebook.com">Фейсбук</a></li>
+                  <li><a class="social-vk" href="https://vk.com">Вконтакте</a></li>
               </ul>
-          </div>
-          <div class="footer-info">
-              <ul>
+              <ul class="footer-info">
                   <li><a href="#">Для поставщиков</a></li>
                   <li><a href="#">О производстве</a></li>
                   <li><a href="#">Наши документы</a></li>
                   <li><a href="#">Экологические стандарты</a></li>
-              </ul>
-          </div>
-          <div class="footer-copyright">
-              <a href="https://htmlacademy.ru/intensive/htmlcss">
+          </ul>
+          <a class="footer-copyright" href="https://htmlacademy.ru/intensive/htmlcss">
                   <img src="img/main-footer-logo.png" width="108" height="39" alt="Логотип HTML Academy">
-              </a>
-              <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>&copy; 2017</p>
-          </div>
+                  <p>Сделано в HTML Academy &copy; 2017</p>
+          </a>
       </footer>
       
       <section class="modal">
