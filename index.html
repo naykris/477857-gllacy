@@ -24,27 +24,67 @@
                   <li><a href="#">О Компании</a></li>
               </ul>
               <ul class="user-navigation">
-                  <li><a href="#">Поиск</a>
-                      <ul class="search">
-                          <li>
-                              <!--форма для поиска-->
-                          </li>
-                      </ul>
+                  <li class="user-navigation-item search">
+                      <section class="user-navigation-form">
+                         <h2 class="visually-hidden">Поиск</h2>
+                          <form>
+                              <label class="visually-hidden" for="search-field">Поиск</label>
+                              <input type="search" id="search-field" name="search" placeholder="Что ищем?">
+                          </form>
+                      </section>
                   </li>
-                  <li><a href="#">Вход</a>
-                      <ul class="login">
-                          <li>
-                              <!--форма ввода e-mail-->
-                              <!--форма ввода пароля-->
-                              <button>Войти</button>
-                              <div class="user-navigation-reg">
-                                  <a href="#">Забыли пароль?</a>
-                                  <a href="#">Новая регистрация</a>
-                              </div>
-                          </li>
-                      </ul>
+                  <li class="user-navigation-item login"> 
+                      <section class="user-navigation-form">
+                          <h2 class="visually-hidden">Вход в личный кабинет</h2>
+                          <form action="https://echo.htmlacademy.ru" method="post">
+                              <fieldset>
+                                  <legend class="visually-hidden">Вход в личный кабинет</legend>
+                                  <label class="visually-hidden" for="email-field">Email</label>
+                                  <input type="email" id="email-field" name="email" placeholder="Электронная почта"><br>
+                                  <label class="visually-hidden" for="password-field">Пароль</label>
+                                  <input type="password" id="password-field" name="password" placeholder="Пароль">
+                                  <button class="btn" value="login-button">Войти</button>
+                              </fieldset>
+                          </form>
+                          <a href="#">Забыли пароль?</a>
+                          <a href="#">Новая регистрация</a>
+                      </section>
                   </li>
-                  <li><a href="#">Пусто</a></li>
+                  <li class="user-navigation-item cart"> Пусто
+                <!--<section class="user-navigation-form">
+                        <h2 class="visually-hidden">Корзина</h2>
+                        <form action="https://echo.htmlacademy.ru" method="post">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <button class="button-delete" type="button" value="delete-item-cart">убрать товар</button>
+                                    </td>
+                                    <td>
+                                        <img src="img/icecream-small-1.png" alt="Пломбир с апельсиновым джемом"> 
+                                        <p>Пломбир с апельсиновым джемом</p>
+                                    </td>
+                                    <td>1,5 кг х <span class="ice-price-cart">200 руб.</span></td>
+                                    <td>300 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button class="button-delete" type="button" value="delete-item-cart">Убрать товар</button>
+                                    </td>
+                                    <td>
+                                        <img src="img/icecream-small-2.png" alt="Клубничный пломбир с присыпкой из белого шоколада">
+                                        <p>Клубничный пломбир с присыпкой из белого шоколада</p>
+                                    </td>
+                                    <td>1,5 кг х <span class="ice-price-cart">300 руб.</span></td>
+                                    <td>450 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">Итого: 750 руб.</td>
+                                </tr>
+                            </table>
+                            <button class="btn" value="cart-button">Оформить заказ</button>
+                        </form>
+                    </section>-->
+                  </li>
               </ul>
           </nav>
           <p>С 10 до 20, ежедневно<br>
@@ -55,7 +95,7 @@
           <section class="presentation">
             <h2 class="visually-hidden">Новые предложения</h2>
               <ul>
-                  <li  class="presentation-item">
+                  <li class="presentation-item">
                       <h2>Крем-брюле и пломбир с малиновым джемом</h2>
                       <img src="img/slider-raspberry-icecream.png" width="647" height="584" alt="Крем-брюле и пломбир с малиновым джемом">
                       <a class="button slider-button" href="#">Давайте оба!</a>
@@ -128,13 +168,16 @@
           <article class="blognews">
               <h2>Новое в нашем блоге</h2>
               <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
-              <img src="img/strawberry.jpg" width="450" height="410" alt="щербет с клубникой">
+              <img src="img/blognews-strawberry.jpg" width="450" height="410" alt="щербет с клубникой">
           </article>
           <section class="subscribe">
               <h2 class="visually-hidden">Подпишитесь на нашу рассылку</h2>
               <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-              <!--форма ввода-->
-              <button type="submit">Отправить</button>
+              <form action="https://echo.htmlacademy.ru" method="post">
+                  <label class="visually-hidden" for="subscribe-field">Введите свой email</label>
+                  <input type="email" id="subscribe-field" name="email-subscribe" placeholder="Электронная почта">
+                  <button class="btn" value="submit-subscribe">Отправить</button>
+              </form>
           </section>
           <section class="contacts">
               <h2 class="visually-hidden">Как с нами связаться</h2>
@@ -148,6 +191,7 @@
                     <span>8 812 450-25-25</span><br>
                     (с 10 до 20 ежедневно)
                  </p>
+                 <a class="button" href="#modal-question">Форма обратной связи</a>
               </div>
           </section>
       </main>
@@ -170,13 +214,21 @@
           </a>
       </footer>
       
-      <section class="modal">
+      <section id="modal-question" class="modal">
           <h2>Мы обязательно вам ответим</h2>
-          <!--Форма ввода имени-->
-          <!--Форма ввода адреса электронной почты-->
-          <!--Поле для ввода вопроса-->
-          <button>Отправить</button>
-          <span class="modal-close">X</span>
+          <form action="https://echo.htmlacademy.ru" method="post">
+              <fieldset>
+                  <legend class="visually-hidden">Форма обратной связи</legend>
+                     <label class="visually-hidden" for="name-field">Введите ваше имя</label>
+                     <input type="text" id="name-field" name="first-name" placeholder="Как вас зовут?"><br>
+                     <label class="visually-hidden" for="email-for-feedback">Ваш email</label>
+                     <input type="email" id="email-for-feedback" name="email-for-feedback" placeholder="Ваша почта для ответа?"><br>
+                     <label class="visually-hidden" for="question-form">Введите ваш вопрос</label>
+                     <textarea id="question-form" name="question" placeholder="Напишите что-нибудь..."></textarea>
+                     <button class="btn" value="submit-question-form">Отправить</button>
+              </fieldset>
+          </form>
+          <button class="modal-question-close" type="button" value="modal-question-close">Закрыть</button>
       </section>
   </body>
 </html>
