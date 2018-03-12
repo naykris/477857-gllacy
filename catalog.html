@@ -11,14 +11,68 @@
                   <img src="img/logo.svg" width="154" height="64" alt="Glacy Shop">
               </a>
               <ul class="site-navigation">
-                  <li><a class="site-navigation-item site-navigation-current">Каталог</a></li>
+                  <li><a class="site-navigation-item" href="catalog.html">Каталог</a>
+                      <ul class="submenu">
+                          <li><a href="#">Новинки</a></li>
+                          <li><a href="catalog.html">Сливочное</a></li>
+                          <li><a href="#">Щербеты</a></li>
+                          <li><a href="#">Фруктовый лед</a></li>
+                          <li><a href="#">Мелорин</a></li>
+                      </ul>
+                  </li>
                   <li><a href="#">Доставка и оплата</a></li>
                   <li><a href="#">О Компании</a></li>
               </ul>
               <ul class="user-navigation">
-                  <li><a href="#">Поиск</a></li>
-                  <li><a href="#">Вход</a></li>
-                  <li><a href="#">2 товара</a></li>
+                  <li class="user-navigation-item search">
+                      <section class="user-navigation-form">
+                         <h2 class="visually-hidden">Поиск</h2>
+                          <form>
+                              <label class="visually-hidden" for="search-field">Поиск</label>
+                              <input type="search" id="search-field" name="search" placeholder="Что ищем?">
+                          </form>
+                      </section>
+                  </li>
+                  <li class="user-navigation-item login">
+                      <section class="user-navigation-form">
+                         <h2 class="visually-hidden">Вход в личный кабинет</h2>
+                          <form action="https://echo.htmlacademy.ru" method="post">
+                              <fieldset>
+                                  <legend class="visually-hidden">Вход в личный кабинет</legend>
+                                  <label class="visually-hidden" for="email-field">Email</label>
+                                  <input type="email" id="email-field" name="email" placeholder="Электронная почта"><br>
+                                  <label class="visually-hidden" for="password-field">Пароль</label>
+                                  <input type="password" id="password-field" name="password" placeholder="Пароль">
+                                  <button class="btn" value="login-button">Войти</button>
+                              </fieldset>
+                          </form>
+                          <a href="#">Забыли пароль?</a>
+                          <a href="#">Новая регистрация</a>
+                      </section>
+                  </li>
+                  <li class="user-navigation-item cart"> 2 товара
+                      <section class="user-navigation-form">
+                          <h2 class="visually-hidden">Корзина</h2>
+                           <table>
+                                <tr>
+                                    <td>Пломбир с апельсиновым джемом</td>
+                                    <td>1,5 кг х<span class="ice-price-cart">200 руб.</span></td>
+                                    <td>300 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td>Клубничный пломбир с присыпкой из белого шоколада</td>
+                                    <td>1,5 кг х<span class="ice-price-cart">300 руб.</span></td>
+                                    <td>450 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Итого: 750 руб.</td>
+                                </tr>
+                           </table>
+                          <form action="https://echo.htmlacademy.ru" method="post">
+                                <button class="btn" value="cart-button">Оформить заказ</button>
+                          </form>
+                      </section>
+                  </li>
               </ul>
           </nav>
           <p>С 10 до 20, ежедневно<br>
@@ -34,8 +88,33 @@
           <h1>Сливочное мороженое</h1>
           <section class="catalog-filters">
              <h2 class="visually-hidden">Фильтры для выбора мороженого</h2>
-              <!--Формы фильтров сортировки, есть селект с выпадающим списком-->
-              <button>Применить</button>
+             <form class="icecream-filters" action="https://echo.htmlacademy.ru" method="post">
+                 <label for="sorting-filter">Сортировка:</label>
+                 <select id="sorting-filter" name="sorting">
+                     <option value="popular">по популярности</option>
+                     <option value="cheap">сначала недорогие</option>
+                     <option value="expensive">сначала дорогие</option>
+                     <option value="faty">по жирности</option>
+                 </select>
+                 <label for="price-filter">Цена: 100 руб. - 500 руб.</label>
+                 <input type="range" id="price-filter" name="price" min="10" max="500" step="10">
+                 <fieldset>
+                     <legend class="visually-hidden">Выбор жирности мороженого</legend>
+                     <label><input type="radio" name="fat-filter" value="fat-1"> 0%</label>
+                     <label><input type="radio" name="fat-filter" value="fat-2" checked> до 10%</label>
+                     <label><input type="radio" name="fat-filter" value="fat-3"> до 30%</label>
+                     <label><input type="radio" name="fat-filter" value="fat-4"> выше 30%</label>
+                 </fieldset>
+                 <fieldset>
+                     <legend class="visually-hidden">Выбор наполнителя для мороженого</legend>
+                     <label><input type="checkbox" name="additive-filter" value="chokolate" checked> шоколадные</label>
+                     <label><input type="checkbox" name="additive-filter" value="sugar" checked> сахарные присыпки</label>
+                     <label><input type="checkbox" name="additive-filter" value="fruit"> фрукты</label>
+                     <label><input type="checkbox" name="additive-filter" value="syrop"> сиропы</label>
+                     <label><input type="checkbox" name="additive-filter" value="jam"> джемы</label>
+                 </fieldset>
+                 <button class="btn btn-filter" type="submit" value="submit-filter">Применить</button>
+             </form>
           </section>
           <section class="catalog">
               <h2 class="visually-hydden">Каталог сливочного мороженого</h2>
@@ -154,10 +233,5 @@
               <p>Сделано в HTML Academy &copy; 2017</p>
           </a>
       </footer>
-      
-      <section class="modal">
-          <h2 class="visually-hidden">Содержимое корзины</h2>
-          <!--Форма для покупки товара-->
-      </section>
   </body>
 </html>
