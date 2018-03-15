@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #ffffff;
+    background-color: #849d8f;
+}
+
+a,
+a:visited {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #ffbc9e;
+}
+
+.site-navigation,
+.user-navigation,
+.submenu {
+    list-style: none;
+}
+
+.site-navigation a,
+.site-navigation a:visited {
+    font-weight: 700;
+    line-height: 18px;
+    color: #ffffff;
+    background-color: #849d8f;
+}
+
+.site-navigation .submenu a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    background-color: #f8f7f4;
+}
+
+.site-navigation a:hover,
+.submenu a {
+    background-color: #f8f7f4;
+}
+
+.site-navigation a:active {
+    background-color: #ededed;
+}
+
+.current-item-menu,
+.site-navigation a:focus {
+    background-color: #d07058;
+    color: #ffffff;
+}
+
+.submenu a:hover {
+    background-color: #fbded7;
+}
+
+.submenu a:active {
+    background-color: #f6b5a5;
+}
+
+.current-item-submenu,
+.submenu a:focus {
+    background-color: #d07058;
+    color: #ffffff;
+}
+
+
+
+.raspberries {
+    background-color: #b1011f;
+    background-image: url("../img/raspberries.jpg");
+}
+
+.chocolate {
+    background-color: #5b351f;
+    background-image: url("../img/chocolate.jpg");
+}
