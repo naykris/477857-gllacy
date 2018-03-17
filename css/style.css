@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    
+/*Типографика*/
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -9,24 +11,67 @@ body {
     background-color: #849d8f;
 }
 
+/*Стилизация состояний ссылок*/
+/*Цвет шрифта и фон непосещенных ссылок и посещенных*/
 a,
 a:visited {
     font-weight: 500;
     color: #ffffff;
 }
 
+/*Цвет шрифта при наведении на них, активных и в фокусе*/
 a:hover,
 a:active,
 a:focus {
     color: #ffbc9e;
 }
 
+/*Стили для кнопок и стилизованных под кнопки ссылок в неактивном состоянии и в посещенном и в фокусе*/
+.btn,
+.button,
+.button:visited,
+.button:focus {
+    color: #ffffff;
+    background-image: linear-gradient(to top, #e84c36, #f26743);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    border: none;
+    box-shadow: 0 2px 0 0 #9e4334;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*убрали подчеркивание ссылкам, стилизованным под кнопки*/
+.button {
+    text-decoration: none;
+}
+
+/*кнопки при наведении*/
+.btn:hover,
+.button:hover {
+    background-image: linear-gradient(to top, #ed705e, #f58569);
+    box-shadow: 0 2px 0 0 #ac1000;
+    color: #ffffff;
+}
+
+/*кнопки при нажатии*/
+.btn:active,
+.button:active {
+    background-image: linear-gradient(to bottom, #d84833, #e0603e);
+    box-shadow: 0 2px 0 0 #952718;
+    color: #fceeec;
+}
+
+/*Базовая стилизация меню сайта*/
+/*Убрали маркеры списков меню*/
 .site-navigation,
 .user-navigation,
 .submenu {
     list-style: none;
 }
 
+/*Стили для всех ссылок меню в шапке*/
 .site-navigation a,
 .site-navigation a:visited {
     font-weight: 700;
@@ -35,7 +80,28 @@ a:focus {
     background-color: #849d8f;
 }
 
-.site-navigation .submenu a {
+/*изменение фона и цвета текста при наведении на пункты меню сайта*/
+.site-navigation a:hover {
+    background-color: #f8f7f4;
+    color: #000000;
+}
+
+/*изменение фона и цвета текста при нажатии на пункты меню сайта*/
+.site-navigation a:active {
+    background-color: #ededed;
+    color: #000000;
+}
+
+/*изменение фона и цвета текста при нахождении пункта меню сайта в фокусе + стиль для обозначения текущей страницы*/
+.current-item-menu,
+.site-navigation a:focus {
+    background-color: #d07058;
+    color: #ffffff;
+}
+
+/*изменение фона и цвета текста при наведении на пункты выпадающего меню*/
+.submenu a,
+.submenu a:visited {
     color: #000000;
     text-decoration: none;
     font-size: 14px;
@@ -44,34 +110,73 @@ a:focus {
     background-color: #f8f7f4;
 }
 
-.site-navigation a:hover,
-.submenu a {
-    background-color: #f8f7f4;
-}
-
-.site-navigation a:active {
-    background-color: #ededed;
-}
-
-.current-item-menu,
-.site-navigation a:focus {
-    background-color: #d07058;
-    color: #ffffff;
-}
-
+/*изменение фона при наведении на пункты выпадающего меню*/
 .submenu a:hover {
     background-color: #fbded7;
 }
 
+/*изменение фона при нажатии на пункты выпадающего меню*/
 .submenu a:active {
     background-color: #f6b5a5;
 }
 
+/*изменение фона и цвета текста при нахождении пункта выпадающего меню в фокусе + стиль для обозначения текущей страницы*/
 .current-item-submenu,
 .submenu a:focus {
     background-color: #d07058;
     color: #ffffff;
 }
+
+/*базовая стилизация меню пользователя*/
+.user-navigation-item {
+    background-color: #a1b4a9;
+    color: #ffffff;
+}
+
+/*изменение цвета шрифта и фона при наведении на пункт пользовательского меню*/
+.user-navigation-item:hover {
+    background-color: #f8f7f4;
+    color: #000000;
+}
+
+/*задание цвета фона для выпадающих форм пользовательского меню*/
+.user-navigation-form {
+    background-color: #f8f7f4;
+}
+
+/*собственный стиль для ссылок в выпадающей форме регистрации/входа в ЛК*/
+.user-navigation-form a {
+    font-weight: 400;
+    color: #000000;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+/*шрифты в корзине*/
+.user-navigation-item {
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.amount {
+    font-weight: 700;
+    text-align: right;
+}
+
+/*Слайдер*/
+/*убираем маркеры списка*/
+.presentation ul {
+    list-style: none;
+}
+/*Заголовки слайдера*/
+.presentation-item h2 {
+    font-size: 60px;
+    line-height: 60.35px;
+    text-align: center;
+}
+
 
 
 
