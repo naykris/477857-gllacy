@@ -1,0 +1,595 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+/*Типографика*/
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #ffffff;
+    background-color: #849d8f;
+}
+
+/*Фон, связанный со вторым слайдом слайдера*/
+.back-blue {
+    background-color: #8996a6;
+}
+
+/*Фон, связанный с третьим слайдом слайдера*/
+.back-brown {
+    background-color: #9d8b84;
+}
+
+.visually-hidden {
+    visibility: hidden;
+}
+
+/*Стилизация состояний ссылок*/
+/*Цвет шрифта и фон непосещенных ссылок и посещенных*/
+a,
+a:visited {
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*Цвет шрифта при наведении на них, активных и в фокусе*/
+a:hover,
+a:active {
+    color: #ffbc9e;
+}
+
+/*Стили для кнопок и стилизованных под кнопки ссылок в неактивном состоянии и в посещенном и в фокусе*/
+.btn,
+.button,
+.button:visited,
+.button:focus {
+    color: #ffffff;
+    background-image: linear-gradient(to top, #e84c36, #f26743);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    border: none;
+    box-shadow: 0 2px 0 0 #9e4334;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*убрали подчеркивание ссылкам, стилизованным под кнопки*/
+.button {
+    text-decoration: none;
+}
+
+/*кнопки при наведении*/
+.btn:hover,
+.button:hover {
+    background-image: linear-gradient(to top, #ed705e, #f58569);
+    box-shadow: 0 2px 0 0 #ac1000;
+    color: #ffffff;
+}
+
+/*кнопки при нажатии*/
+.btn:active,
+.button:active {
+    background-image: linear-gradient(to bottom, #d84833, #e0603e);
+    box-shadow: 0 -2px 0 0 #952718;
+    color: #fceeec;
+}
+
+/*Базовая стилизация меню сайта*/
+/*Убрали маркеры списков меню*/
+.site-navigation,
+.user-navigation,
+.submenu {
+    list-style: none;
+}
+
+/*Стили для всех ссылок меню в шапке*/
+.item-menu,
+.item-menu:visited {
+    font-weight: 700;
+    line-height: 18px;
+    color: #ffffff;
+}
+
+/*изменение фона и цвета текста при наведении на пункты меню сайта*/
+.item-menu:hover {
+    background-color: #f8f7f4;
+    color: #000000;
+}
+
+/*изменение фона и цвета текста при нажатии на пункты меню сайта*/
+.item-menu:active {
+    background-color: #ededed;
+    color: #000000;
+}
+
+/*изменение фона и цвета текста при нахождении пункта меню сайта в фокусе + стиль для обозначения текущей страницы*/
+.current-item-menu,
+menu-item:focus {
+    background-color: #d07058;
+    color: #ffffff;
+}
+
+/* Фон для субменю*/
+.submenu {
+    background-color: #f8f7f4;
+}
+
+
+/*изменение фона и цвета текста при наведении на пункты выпадающего меню*/
+.item-submenu,
+.item-submenu:visited {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/*изменение фона при наведении на пункты выпадающего меню*/
+.item-submenu:hover {
+    background-color: #fbded7;
+}
+
+/*изменение фона при нажатии на пункты выпадающего меню*/
+.item-submenu:active {
+    background-color: #f6b5a5;
+}
+
+/*базовая стилизация меню пользователя*/
+.user-navigation .user-navigation-item {
+    background-color: #a1b4a9;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+/*изменение цвета шрифта и фона при наведении на пункт пользовательского меню*/
+.user-navigation-item:hover {
+    background-color: #f8f7f4;
+    color: #000000;
+}
+
+/*задание цвета фона для выпадающих форм пользовательского меню*/
+.user-navigation-form {
+    background-color: #f8f7f4;
+}
+
+/*собственный стиль для ссылок в выпадающей форме регистрации/входа в ЛК*/
+.user-navigation-form a {
+    font-weight: 400;
+    color: #000000;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+/*Стиль для пункта меню корзина с товарами*/
+.cart-full {
+    background-color: #f7f6f3;
+    color: #000000;
+}
+
+/*шрифты в корзине*/
+.user-navigation-item {
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    font-weight: 400;
+}
+
+/*Стиль для итоговой цифры в корзине*/
+.amount {
+    font-weight: 700;
+    text-align: right;
+}
+
+.ice-price-cart {
+    color: #999999;
+    background-color: #f8f7f4;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.schedule {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    font-weight: 700;
+}
+
+.phone {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: bold;
+}
+                               /*Стили для главной страницы*/
+
+/*Слайдер*/
+/*убираем маркеры списка*/
+.presentation ul {
+    list-style: none;
+}
+/*Заголовки слайдера*/
+.presentation-item h2 {
+    font-size: 60px;
+    line-height: 60.35px;
+    text-align: center;
+}
+
+/*Стили баннеров*/
+/*Заголовки баннеров*/
+.banner h2 {
+    font-size: 35px;
+    line-height: 41px;
+    font-weight: 700;
+}
+
+/*Стили для абзацев баннеров*/
+.banner p {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: justify;
+}
+
+/*Фоновые цвет и картина для баннера с малинкой*/
+.raspberries {
+    background-color: #b1011f;
+    background-image: url("../img/raspberries.jpg");
+}
+
+/*Фоновые цвет и картина для баннера с шоколадкой*/
+.chocolate {
+    background-color: #5b351f;
+    background-image: url("../img/chocolate.jpg");
+}
+
+/*Стили ХИТ-листа*/
+/*Убрали маркеры списка*/
+.hits-list {
+    list-style: none;
+}
+
+/*Стилизация для ценников*/
+.price {
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.weight {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 700;
+}
+
+/*Стилизация блока promo*/
+/*Задаем цвет фона и фоновое изображение блоку*/
+.promo {
+    background-color: #ebdfc4;
+    background-image: url("../img/wafer.jpg");
+}
+/*убираем маркеры списка*/
+.promo-list {
+    list-style: none;
+}
+
+/*Заголовок*/
+.promo h2 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/*Стили для текста внутри блока*/
+.promo-item {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #000000;
+}
+
+/*Стили для blognews*/
+/*Фоновый цвет для блока*/
+.blognews {
+    background-color: #ffffff;
+}
+
+/*Заголовок*/
+.blognews h2 {
+    color: #000000;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+/*Стили для ссылки*/
+.blognews a {
+    color: #000000;
+    text-decoration: underline;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+/*Стилизация блока подписки*/
+/*Фоновые цвет и изображение*/
+.subscribe {
+    background-color: #f8f7f4;
+    background-image: url("../img/bg-post.svg");
+    color: #5a5a5a;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.subscribe div {
+    background-color: #f8f7f4;
+}
+
+/*Cтилизация блока с адресом*/
+.feedback {
+    background-color: #fdfefe;
+    color: #000000;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.feedback span {
+    color: #000000;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+/*Cтилизация футера*/
+/*Убираем маркеры списков*/
+.footer-social,
+.footer-info {
+    list-style: none;
+}
+
+/*Обнулили шрифт, потом вставятся иконки*/
+.footer-social {
+    font-size: 0;
+}
+
+/*Стилизуем иконки соцсетей футера*/
+/*Общие размеры иконок и прозрачность в обычном состоянии*/
+.social-tw::before,
+.social-in::before,
+.social-fb::before,
+.social-vk::before {
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+}
+
+/*Иконка твиттера*/
+.social-tw::before {
+    content: url("../img/twitter.svg");
+}
+
+/*Иконка инстаграма*/
+.social-in::before {
+    content: url("../img/instagram.svg");
+}
+
+/*Иконка фейсбука*/
+.social-fb::before {
+    content: url("../img/fb.svg");
+}
+
+/*Иконка Вконтакте*/
+.social-vk::before {
+    content: url("../img/vk.svg");
+}
+
+/*Изменение прозрачности при наведенеии у иконок*/
+.social-tw:hover::before,
+.social-in:hover::before,
+.social-fb:hover::before,
+.social-vk:hover::before
+{
+    opacity: 1;
+}
+
+/*Изменение прозрачности иконок при нажатии*/
+.social-tw:active::before,
+.social-in:active::before,
+.social-fb:active::before,
+.social-vk:active::before {
+    opacity: 0.7;
+}
+
+/*Стилизация блока информации для посетителя*/
+.footer-info {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+/*Отдельный стиль ссылки для поставщиков*/
+.provider {
+    font-weight: 700;
+}
+
+.footer-copyright p {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+/*Форма обратной связи*/
+.modal {
+    background-color: #f8f7f4;
+}
+
+.modal h2 {
+    color: #000000;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+/*Поля формы, когда она yt активна и когда в фокусе*/
+.modal input,
+.modal textarea,
+.modal input:focus,
+.modal textarea:focus {
+    border: 1px solid #d3d3d2;
+    outline: none;
+}
+
+/*Поля формы обратной связи при наведении*/
+.modal input:hover,
+.modal textarea:hover {
+    border: 2px solid #c7c6c5;
+    outline: none;
+}
+
+/*Поля формы в активном состоянии*/
+.modal input:active,
+.modal textarea:active {
+    border: 2px solid #8fbdec;
+    outline: none;
+}
+
+                                             /*Стили для страницы каталога*/
+/*Стили для "хлебных крошек"*/
+.breadcrumbs {
+    list-style: none;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+/*Стиль для заголовка страницы*/
+.main-container h1 {
+    font-size: 35px;
+    line-height: 41px;
+    font-weight: 700;
+}
+
+/*Шрифты фильтров*/
+.catalog-filters {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+/*Отдельный стиль для лейблов*/
+.catalog-filters label {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+/*Фоновый цвет для всех форм в фильтрах*/
+.catalog-filters select,
+.catalog-filters fieldset,
+.catalog-filters p {
+    background-color: #a6b7ae;
+    color: #ffffff;
+}
+
+/*Стиль выпадающего списка при наведении*/
+.catalog-filters select:hover {
+    color: #000000;
+}
+
+
+/*Стили для выпадающего списка в фильтре*/
+.catalog-filters option {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    background-color: #ffffff;
+}
+
+/*Стиль для кнопки в фильтрах*/
+.btn-filter {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    background-image: none;
+    box-shadow: 0 0 0 2px #ffffff;
+    background-color: #a6b7ae;
+    text-shadow: none;
+
+}
+
+/*Стиль кнопки в фильтрах при наведении*/
+.btn-filter:hover {
+    color: #000000;
+    background-color: #fbfcfb;
+    background-image: none;
+    box-shadow: 0 0 0 2px #ffffff;
+}
+    /*Стиль кнопки в фильтрах при нажатии*/
+    
+.btn-filter:active {
+    color: #000000;
+    background-color: #eaeaea;
+    background-image: none;
+    box-shadow: inset 0 1px 0 0 #6a6b6a;
+    outline: 0;
+}
+
+/*Убираем маркеры из списка товаров*/
+.catalog-list {
+    list-style: none;
+}
+
+
+/*Фон при наведении на карточку*/
+.catalog-item:hover {
+    content: "";
+    position: absolute;
+    width: 297px;
+    height: 412px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/*Стиль для пагинатора*/
+/*убираем маркеры списка*/
+.paginator-list {
+    list-style: none;
+}
+
+/*Ссылки в обычном состоянии и посещенном*/
+paginator-list .pagination-item, 
+paginator-list .pagination-item:visited {
+    font-size: 16px;
+    line-height: 18pf;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/*Ссылки при наведении*/
+.paginator-list .pagination-item:hover {
+    color: #ffffff;
+    background-color: #9db1a5;
+}
+
+/*Ссылки при нажатии*/
+.paginator-list .pagination-item:active {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/*Стиль для текущей кнопки пагинатора*/
+
+.pagination-item-current {
+    color: #000000;
+    background-color: #ffffff;
+}
