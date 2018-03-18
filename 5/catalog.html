@@ -24,15 +24,15 @@
                           <li><a class="item-submenu" href="#">Мелорин</a></li>
                       </ul>
                   </li>
-                  <li class="item-menu"><a href="#">Доставка и оплата</a></li>
-                  <li class="item-menu"><a href="#">О Компании</a></li>
+                  <li><a class="item-menu" href="#">Доставка и оплата</a></li>
+                  <li><a class="item-menu" href="#">О Компании</a></li>
               </ul>
               <ul class="user-navigation">
                   <li class="user-navigation-item search">
                       <section class="user-navigation-form">
                           <form>
-                              <label class="visually-hidden" for="search-field">Поиск</label>
                               <input type="search" id="search-field" name="search" placeholder="Что ищем?">
+                              <label class="visually-hidden" for="search-field">Поиск</label>
                           </form>
                       </section>
                   </li>
@@ -41,10 +41,10 @@
                           <form action="https://echo.htmlacademy.ru" method="post">
                               <fieldset>
                                   <legend class="visually-hidden">Вход в личный кабинет</legend>
-                                  <label class="visually-hidden" for="email-field">Email</label>
-                                  <input type="email" id="email-field" name="email" placeholder="Электронная почта"><br>
-                                  <label class="visually-hidden" for="password-field">Пароль</label>
+                                  <input type="email" id="email-field" name="email" placeholder="Электронная почта">
+                                  <label class="visually-hidden" for="email-field">Email</label><br>
                                   <input type="password" id="password-field" name="password" placeholder="Пароль">
+                                  <label class="visually-hidden" for="password-field">Пароль</label>
                                   <button class="btn" value="login-button">Войти</button>
                               </fieldset>
                           </form>
@@ -141,11 +141,13 @@
                       </a>
                   </li>
                   <li class="catalog-item">
-                      <a href="#">
+                      <div class="catalog-item-wrapper">
+                          <a href="#">
                           <img src="img/icecream-2.png" width="267" height="267" alt="Сливочно-кофейное мороженое с кусочками шоколада">
                           <p class="price">380<span class="weight">/кг</span></p>
                           <p>Сливочно-кофейное с кусочками шоколада</p>
                       </a>
+                      </div>
                   </li>
                   <li class="catalog-item">
                       <a href="#">
