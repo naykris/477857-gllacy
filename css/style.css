@@ -520,6 +520,7 @@ menu-item:focus {
     background-image: none;
     box-shadow: 0 0 0 2px #ffffff;
     background-color: #a6b7ae;
+    text-shadow: none;
 
 }
 
