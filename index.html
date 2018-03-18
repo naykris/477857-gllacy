@@ -30,8 +30,8 @@
                   <li class="user-navigation-item search">
                       <section class="user-navigation-form">
                           <form>
-                              <label class="visually-hidden" for="search-field">Поиск</label>
                               <input type="search" id="search-field" name="search" placeholder="Что ищем?">
+                              <label class="visually-hidden" for="search-field">Поиск</label>
                           </form>
                       </section>
                   </li>
@@ -40,10 +40,10 @@
                           <form action="https://echo.htmlacademy.ru" method="post">
                               <fieldset>
                                   <legend class="visually-hidden">Вход в личный кабинет</legend>
-                                  <label class="visually-hidden" for="email-field">Email</label>
-                                  <input type="email" id="email-field" name="email" placeholder="Электронная почта"><br>
-                                  <label class="visually-hidden" for="password-field">Пароль</label>
+                                  <input type="email" id="email-field" name="email" placeholder="Электронная почта">
+                                  <label class="visually-hidden" for="email-field">Email</label><br>
                                   <input type="password" id="password-field" name="password" placeholder="Пароль">
+                                  <label class="visually-hidden" for="password-field">Пароль</label>
                                   <button class="btn" value="login-button">Войти</button>
                               </fieldset>
                           </form>
@@ -51,41 +51,7 @@
                           <a href="#">Новая регистрация</a>
                       </section>
                   </li>
-                  <li class="user-navigation-item cart"> Пусто
-                <!--<section class="user-navigation-form">
-                        <h2 class="visually-hidden">Корзина</h2>
-                        <form action="https://echo.htmlacademy.ru" method="post">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <button class="button-delete" type="button" value="delete-item-cart">убрать товар</button>
-                                    </td>
-                                    <td>
-                                        <img src="img/icecream-small-1.png" alt="Пломбир с апельсиновым джемом"> 
-                                        <p>Пломбир с апельсиновым джемом</p>
-                                    </td>
-                                    <td>1,5 кг х <span class="ice-price-cart">200 руб.</span></td>
-                                    <td>300 руб.</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button class="button-delete" type="button" value="delete-item-cart">Убрать товар</button>
-                                    </td>
-                                    <td>
-                                        <img src="img/icecream-small-2.png" alt="Клубничный пломбир с присыпкой из белого шоколада">
-                                        <p>Клубничный пломбир с присыпкой из белого шоколада</p>
-                                    </td>
-                                    <td>1,5 кг х <span class="ice-price-cart">300 руб.</span></td>
-                                    <td>450 руб.</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4">Итого: 750 руб.</td>
-                                </tr>
-                            </table>
-                            <button class="btn" value="cart-button">Оформить заказ</button>
-                        </form>
-                    </section>-->
-                  </li>
+                  <li class="user-navigation-item cart"> Пусто</li>
               </ul>
           </nav>
           <p>С 10 до 20, ежедневно<br>
@@ -222,12 +188,12 @@
           <form action="https://echo.htmlacademy.ru" method="post">
               <fieldset>
                   <legend class="visually-hidden">Форма обратной связи</legend>
-                     <label class="visually-hidden" for="name-field">Введите ваше имя</label>
-                     <input type="text" id="name-field" name="first-name" placeholder="Как вас зовут?"><br>
-                     <label class="visually-hidden" for="email-for-feedback">Ваш email</label>
-                     <input type="email" id="email-for-feedback" name="email-for-feedback" placeholder="Ваша почта для ответа?"><br>
-                     <label class="visually-hidden" for="question-form">Введите ваш вопрос</label>
+                     <input type="text" id="name-field" name="first-name" placeholder="Как вас зовут?">
+                     <label class="visually-hidden" for="name-field">Введите ваше имя</label><br>
+                     <input type="email" id="email-for-feedback" name="email-for-feedback" placeholder="Ваша почта для ответа?">
+                     <label class="visually-hidden" for="email-for-feedback">Ваш email</label><br>
                      <textarea id="question-form" name="question" placeholder="Напишите что-нибудь..."></textarea>
+                     <label class="visually-hidden" for="question-form">Введите ваш вопрос</label>
                      <button class="btn" value="submit-question-form">Отправить</button>
               </fieldset>
           </form>

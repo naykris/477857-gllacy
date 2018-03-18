@@ -21,6 +21,10 @@ body {
     background-color: #9d8b84;
 }
 
+.visually-hidden {
+    visibility: hidden;
+}
+
 /*Стилизация состояний ссылок*/
 /*Цвет шрифта и фон непосещенных ссылок и посещенных*/
 a,
@@ -87,7 +91,6 @@ a:active {
     font-weight: 700;
     line-height: 18px;
     color: #ffffff;
-    background-color: #849d8f;
 }
 
 /*изменение фона и цвета текста при наведении на пункты меню сайта*/
@@ -109,6 +112,12 @@ menu-item:focus {
     color: #ffffff;
 }
 
+/* Фон для субменю*/
+.submenu {
+    background-color: #f8f7f4;
+}
+
+
 /*изменение фона и цвета текста при наведении на пункты выпадающего меню*/
 .item-submenu,
 .item-submenu:visited {
@@ -116,7 +125,6 @@ menu-item:focus {
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
-    background-color: #f8f7f4;
 }
 
 /*изменение фона при наведении на пункты выпадающего меню*/
@@ -182,6 +190,18 @@ menu-item:focus {
     background-color: #f8f7f4;
 }
 
+.main-header p {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    font-weight: 700;
+}
+
+.main-header span {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: bold;
+}
                                /*Стили для главной страницы*/
 
 /*Слайдер*/
@@ -236,6 +256,7 @@ menu-item:focus {
     font-size: 45px;
     line-height: 45px;
     font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .weight {
@@ -335,6 +356,54 @@ menu-item:focus {
 /*Обнулили шрифт, потом вставятся иконки*/
 .footer-social {
     font-size: 0;
+}
+
+/*Стилизуем иконки соцсетей футера*/
+/*Общие размеры иконок и прозрачность в обычном состоянии*/
+.social-tw::before,
+.social-in::before,
+.social-fb::before,
+.social-vk::before {
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+}
+
+/*Иконка твиттера*/
+.social-tw::before {
+    content: url("../img/twitter.svg");
+}
+
+/*Иконка инстаграма*/
+.social-in::before {
+    content: url("../img/instagram.svg");
+}
+
+/*Иконка фейсбука*/
+.social-fb::before {
+    content: url("../img/fb.svg");
+}
+
+/*Иконка Вконтакте*/
+.social-vk::before {
+    content: url("../img/vk.svg");
+}
+
+/*Изменение прозрачности при наведенеии у иконок*/
+.social-tw:hover::before,
+.social-in:hover::before,
+.social-fb:hover::before,
+.social-vk:hover::before
+{
+    opacity: 1;
+}
+
+/*Изменение прозрачности иконок при нажатии*/
+.social-tw:active::before,
+.social-in:active::before,
+.social-fb:active::before,
+.social-vk:active::before {
+    opacity: 0.7;
 }
 
 /*Стилизация блока информации для посетителя*/
@@ -469,6 +538,22 @@ menu-item:focus {
     background-image: none;
     box-shadow: inset 0 1px 0 0 #6a6b6a;
     outline: 0;
+}
+
+/*Убираем маркеры из списка товаров*/
+.catalog-list {
+    list-style: none;
+}
+
+
+/*Фон при наведении на карточку*/
+.catalog-item:hover {
+    content: "";
+    position: absolute;
+    width: 297px;
+    height: 412px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
 }
 
 /*Стиль для пагинатора*/
