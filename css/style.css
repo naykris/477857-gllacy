@@ -1,7 +1,5 @@
 body {
     margin: 0 auto;
-    padding-left: 26px;
-    padding-right: 26px;
     max-width: 1200px;
     
 /*Типографика*/
@@ -84,6 +82,8 @@ a:active {
 /*Хэдер*/
 .main-header {
     padding-top: 9px;
+    padding-left: 26px;
+    padding-right: 26px;
 }
 
 .main-header-logo {
@@ -254,6 +254,10 @@ menu-item:focus {
     font-weight: bold;
 }
                                /*Стили для главной страницы*/
+.main-container {
+    padding-left: 26px;
+    padding-right: 26px;
+}
 /*Слайдер*/
 /*убираем маркеры списка*/
 .presentation {
@@ -405,7 +409,6 @@ menu-item:focus {
 
 .blognews-subscribe-wrapper {
     display: flex;
-    justify-content: space-between;
 }
 
 /*Стили для blognews*/
@@ -417,6 +420,9 @@ menu-item:focus {
 /*Фоновый цвет для блока*/
 .blognews {
     background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-right: 26px;
 }
 
 /*Заголовок*/
@@ -425,6 +431,9 @@ menu-item:focus {
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
+    margin-top: 23px;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 /*Стили для ссылки*/
@@ -434,6 +443,13 @@ menu-item:focus {
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
+}
+
+.blognews img {
+    position: absolute;
+    top: -75px;
+    left: 190px;
+    transform: scale(0.8);
 }
 
 /*Стилизация блока подписки*/
@@ -499,22 +515,31 @@ menu-item:focus {
 /*Cтилизация футера*/
 /*Убираем маркеры списков*/
 .main-footer {
+    padding-left: 26px;
+    padding-right: 26px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.footer-wrapper {
     display: flex;
 }
 
 .footer-social,
 .footer-info {
-    display: flex;
     list-style: none;
     justify-content: space-between;
     padding: 0;
     margin: 0;
+    margin-right: 210px;
 }
 
 /*Обнулили шрифт, потом вставятся иконки*/
 .footer-social {
+    display: flex;
+    justify-content: space-between;
     font-size: 0;
-    width: 188px;
+    width: 190px;
     margin-top: 20px;
 }
 
@@ -568,10 +593,14 @@ menu-item:focus {
 
 /*Стилизация блока информации для посетителя*/
 .footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 335px;
     color: #ffffff;
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
+    margin-left: auto;
 }
 
 /*Отдельный стиль ссылки для поставщиков*/
@@ -580,6 +609,7 @@ menu-item:focus {
 }
 
 .footer-copyright p {
+    width: 190px;
     font-size: 12px;
     line-height: 18px;
     font-weight: 400;
@@ -587,10 +617,15 @@ menu-item:focus {
 
 /*Форма обратной связи*/
 .modal {
+    width: 425px;   
+    padding: 0 26px;
+    padding-top: 20px;
+    border-radius: 10px;
     background-color: #f8f7f4;
 }
 
 .modal h2 {
+    margin: 0;
     color: #000000;
     font-size: 24px;
     line-height: 28px;
@@ -620,9 +655,19 @@ menu-item:focus {
     outline: none;
 }
 
-                                             /*Стили для страницы каталога*/
+.modal fieldset {
+    border: none;
+}
+
+.modal input {
+    margin-bottom: 20px;
+}
+                                      /*Стили для страницы каталога*/
 /*Стили для "хлебных крошек"*/
 .breadcrumbs {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 8px;
     list-style: none;
     font-size: 14px;
     line-height: 16px;
@@ -631,6 +676,8 @@ menu-item:focus {
 
 /*Стиль для заголовка страницы*/
 .main-container h1 {
+    margin-top: 0;
+    margin-bottom: 27px;
     font-size: 35px;
     line-height: 41px;
     font-weight: 700;
@@ -638,6 +685,9 @@ menu-item:focus {
 
 /*Шрифты фильтров*/
 .catalog-filters {
+    display: flex;
+    justify-content: space-between;
+    width: 880px;
     font-size: 16px;
     line-height: 18px;
     font-weight: 500;
@@ -701,14 +751,33 @@ menu-item:focus {
     outline: 0;
 }
 
+.catalog {
+    width: 1200px;
+}
+
 /*Убираем маркеры из списка товаров*/
 .catalog-list {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 80px;
+}
+
+.catalog-item {
+    width: 267px;
+    margin-bottom: 30px;
+    margin-right: 26px;
+}
+
+catalog-item:nth-child(3)  {
+    margin-right: 0;
 }
 
 /*Фон при наведении на карточку*/
-.hits-list .hits-item:hover,
-.catalog-item:hover {
+.hits-list .hits-item:hover::before,
+.catalog-item:hover::before {
     content: "";
     position: absolute;
     width: 297px;
@@ -720,6 +789,9 @@ menu-item:focus {
 /*Стиль для пагинатора*/
 /*убираем маркеры списка*/
 .paginator-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 
