@@ -1,6 +1,12 @@
+html,
+body {
+  margin: 0;
+}
+
 body {
     margin: 0 auto;
-    width: 1200px;
+    min-width: 1200px;
+    width: 100%;
     position: relative;
     
 /*Типографика*/
@@ -12,27 +18,42 @@ body {
     background-color: #849d8f;
 }
 
-/*Фон, связанный со вторым слайдом слайдера*/
-.back-blue {
-    background-color: #8996a6;
+.site-wrapper {
+    min-width: 100%;
+    background-color: #849d8f;
+    background-image: url("../img/slider-raspberry-icecream.png");
+    background-repeat: no-repeat;
+    background-position: center 83px; 
+    transition: background-image 0.5s ease-in-out, background-color 1s ease-in-out;
 }
 
-/*Фон, связанный с третьим слайдом слайдера*/
-.back-brown {
-    background-color: #9d8b84;
+.site-wrapper::before,
+.site-wrapper::after {
+    content: "";
+    visibility: hidden;
+}
+
+.site-wrapper::before {
+    background-image: url("../img/slider-lemon-icecream.png");
+}
+
+.site-wrapper::after {
+    background-image: url("../img/strawberry-icecream.png");
 }
 
 /*класс для скрытия контента*/ 
 .visually-hidden {
-    visibility: hidden;
-    font-size: 1px;
-    margin: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
 }
 
 /*Центровщик контента на главной странице*/
 .content-center {
     margin: 0 auto;
     padding: 0 2.3%;
+    width: 1148px;
 }
 
 /*Стили для кнопок и стилизованных под кнопки ссылок в неактивном состоянии и в посещенном и в фокусе*/
@@ -73,6 +94,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 11px;
+    z-index: 5;
 }
 
 /*Стили для логотипа*/
@@ -171,7 +193,7 @@ body {
     position: absolute;
     overflow: hidden;
     top: 60px;
-    left: 185px;
+    left: 343px;
     width: 144px;
     border-radius: 5px;
     background-color: #f8f7f4;
@@ -195,7 +217,6 @@ body {
     line-height: 16px;
     padding-left: 22px;
     padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .submenu .new-item {
@@ -473,17 +494,92 @@ body {
 /*Слайдер*/
 /*убираем маркеры списка*/
 .presentation {
-    margin-bottom: 20px;
+    position: relative;
+    padding-top: 270px;
+    text-align: center;
+    color: #ffffff;
 }
 
-.presentation ul {
+.presentation-list {
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
+
 /*Заголовки слайдера*/
-.presentation-item h2 {
+.presentation-title {
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 32px;
     font-size: 60px;
     line-height: 60.35px;
+    font-weight: 700;
     text-align: center;
+}
+
+.slider-button {
+    position: relative;
+
+    display: inline-block;
+    padding: 10px 40px;
+    margin-bottom: 40px;
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 700;
+    border-radius: 60px;
+    cursor: pointer;
+
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 63px;
+    left: 0;
+    z-index: 20;
+    font-size: 0;
+}
+
+.slider-controls label {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 8px;
+    vertical-align: top;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slide {
+    display: none;
+}
+
+#product-1:checked ~ .site-wrapper #slide1,
+#product-2:checked ~ .site-wrapper #slide2,
+#product-3:checked ~ .site-wrapper #slide3 {
+    display: block;
+}
+
+#product-1:checked ~ .site-wrapper label[for="product-1"],
+#product-2:checked ~ .site-wrapper label[for="product-2"],
+#product-3:checked ~ .site-wrapper label[for="product-3"] {
+    background-color: #ffffff;
+}
+
+#product-1:checked ~ .site-wrapper {
+    background-color: #849d8f;
+    background-image: url("../img/slider-raspberry-icecream.png");
+}
+
+#product-2:checked ~ .site-wrapper {
+    background-color: #8996a6;
+    background-image: url("../img/slider-lemon-icecream.png");
+}
+
+#product-3:checked ~ .site-wrapper {
+    background-color: #9d8b84;
+    background-image: url("../img/strawberry-icecream.png");
 }
 
 /*Стили баннеров*/
@@ -552,72 +648,83 @@ body {
 
 /*Стили ХИТ-листа*/
 /*Убрали маркеры списка*/
-.hits-list {
+.hits-list,
+.catalog-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.hits-item {
+.hits-item,
+.catalog-item {
     position: relative;
+    min-height: 100%;
     width: 268px;
     margin-bottom: 50px;
 }
 
-.hits-item a,
-.hits-item a:focus,
-.hits-item a:visited,
-.catalog-item a,
-.catalog-item a:focus,
-.catalog-item:visited {
+.hit,
+.icecream {
     font-size: 16px;
     line-height: 22px;
     font-weight: 500;
+    text-align: center;
     text-decoration: none;
-    color: #ffffff;
-    text-align: center;   
-}
-
-/*Фон при наведении на карточку*/
-.hits-item:hover .hits-item-wrapper,
-.catalog-item:hover .catalog-item-wrapper {
-    position: absolute;
-    top: -5px;
-    left: -15px;
-    width: 295px;
-    height: 405px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-}
-
-.hits-item:hover .btn,
-.catalog-item:hover .btn{
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
     display: block;
+    color: #ffffff;
+    padding: 5px 14px 22px 14px;
 }
 
-.hits-item::before {
+.hit:hover,
+.icecream:hover {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position:absolute;
+    z-index:2;
+}
+
+.hit:hover .btn,
+.icecream:hover .btn {
+    display: inline-block;
+}
+
+.hit::before{
     content: "";
     position: absolute;
     width: 61px;
     height: 61px;
     background-image: url("../img/hit.svg");
-    background-repeat: no-repeat;        
+    background-repeat: no-repeat;
 }
 
-.hits-item .btn,
-.catalog-item .btn {
+.hit-title,
+.icecream-title {
+    display: inline;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), transparent 1px);
+}
+
+.hit .btn,
+.icecream .btn {
+    padding: 10px 18px;
+    color: #ffffff;
+    background-image: linear-gradient(to top, #e84c36, #f26743);
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    border: none;
+    box-shadow: 0 2px 0 0 #9e4334;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+    text-decoration: none;
     display: none;
-    padding: 12px 20px;
-    position: absolute;
-    top: 340px;
-    left: 46px;
-    z-index: 1;
-}
-
-.hits-item:hover .hits-item .btn {
-    display: block;
 }
 
 /*Стилизация для ценников*/
@@ -630,14 +737,6 @@ body {
     top: 210px;
     margin: 0;
     margin-bottom: 15px;
-}
-
-.price+p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .weight {
@@ -660,7 +759,8 @@ body {
     margin-bottom: 40px;
     padding: 0;
     background-color: #ebdfc4;
-    background-image: url("../img/wafer.jpg");
+    background-image: url("../img/wafer.png");
+    background-repeat: repeat;
     border-radius: 20px;
     border: 1px solid transparent;
 }
@@ -735,6 +835,7 @@ body {
 
 .blognews-subscribe-wrapper {
     display: flex;
+    margin-bottom: 40px;
 }
 
 /*Стили для blognews*/
@@ -785,11 +886,11 @@ body {
 /*Стилизация блока подписки*/
 /*Фоновые цвет и изображение*/
 .subscribe {
+    position: relative;
     width: 547px;
     min-height: 206px;
     background-color: #f8f7f4;
-    background-image: url("../img/bg-post.svg");
-    background-repeat: repeat;
+    background-image: repeating-linear-gradient(135deg, #f8f7f4, #f8f7f4 10px, #92cdff 10px, #92cdff 20px, #f8f7f4 20px, #f8f7f4 30px, #fe9e90 30px, #fe9e90 40px);
     color: #5a5a5a;
     margin-left: 26px;
     padding: 7px;
@@ -833,8 +934,18 @@ body {
 }
 
 /*Cтилизация блока с адресом*/
+.map-center {
+    width: 1200px;
+    margin: 0 auto;
+}
+
 .contacts {
     position: relative;
+}
+
+.contacts iframe {
+    width: 1200px;
+    height: 430px;
 }
 
 .feedback {
@@ -877,16 +988,6 @@ body {
     margin-bottom: 30px;
 }
 
-.contacts::before {
-    content: "";
-    position: absolute;
-    background-image: url("../img/pin.svg");
-    width: 80px;
-    height: 140px;
-    top: 161px;
-    left: 266px;
-}
-
 /*Cтилизация футера*/
 /*Убираем маркеры списков*/
 .main-footer {
@@ -896,8 +997,8 @@ body {
 
 .footer-center {
     display: flex;
+    width: 1148px;
     margin: 0 auto;
-    padding: 0 2.3%;
 }
 
 .footer-social,
@@ -1022,22 +1123,30 @@ body {
 /*Отдельный стиль ссылки для поставщиков*/
 .footer-info .provider {
     font-weight: 700;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-info .provider:hover,
 .footer-info .provider:active {
     color: #ffbc9e;
-    border-bottom: 1px solid rgba(255, 188, 158, 0.3);
+    border-bottom: 1px solid rgba(255, 188, 158, 0.2);
 }
 
-.footer-info .provider::after {
-    content: url("../img/heart.svg");
+.footer-info .provider::after,
+.footer-info .provider:focus::after {
+    content: "";
+    background-image: url("../img/heart.svg");
+    background-repeat: no-repeat;
     position: absolute;
     width: 15px;
     height: 13px;
     top:  2px;
-    left: -20px;
+    left: -22px;
+}
+
+.footer-info .provider:active::after,
+.footer-info .provider:hover::after {
+    content: url("../img/heart-pink.svg");
 }
 
 .footer-info a,
@@ -1046,16 +1155,17 @@ body {
     font-weight: 400;
     color: #ffffff;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     
 }
 
 .footer-info a:hover,
 .footer-info a:active {
     color: #ffbc9e;
-    border-bottom: 1px solid rgba(255, 188, 158, 0.3);
+    border-bottom: 1px solid rgba(255, 188, 158, 0.2);
 }
 
+.footer-logo p,
 .footer-copyright,
 .footer-copyright:focus,
 .footer-copyright:visited {
@@ -1064,16 +1174,21 @@ body {
     font-weight: 400;
     color: #ffffff;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-copyright,
+.footer-copyright:focus,
+.footer-copyright:visited {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-copyright:hover,
 .footer-copyright:active {
     color: #ffbc9e;
-    border-bottom: 1px solid rgba(255, 188, 158, 0.3);
+    border-bottom: 1px solid rgba(255, 188, 158, 0.2);
 }
 
-.footer-copyright p {
+.footer-logo p {
     margin: 0;
     width: 190px;
 }
@@ -1241,8 +1356,7 @@ body {
     padding-right: 20px;
 }
 
-.breadcrumbs a::after,
-.breadcrumbs a::after {
+.breadcrumbs li::after {
     content: "";
     position: absolute;
     background-image: url("../img/icon-right-small.svg");
@@ -1251,6 +1365,18 @@ body {
     width: 16px;
     height: 12px;
     top: 3px;
+}
+
+.breadcrumbs li:nth-of-type(1)::after {
+    left: 56px;
+}
+
+.breadcrumbs li:nth-of-type(2)::after {
+    left: 129px;
+}
+
+.breadcrumbs li:nth-of-type(3)::after {
+    background-image: none;
 }
 
 .breadcrumbs .current-breadcrumbs::after {
@@ -1265,13 +1391,13 @@ body {
     font-weight: 400;
     color: #ffffff;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .breadcrumbs a:hover,
 .breadcrumbs a:active {
     color: #ffbc9e;
-    border-bottom: 1px solid rgba(255, 188, 158, 0.3);
+    border-bottom: 1px solid rgba(255, 188, 158, 0.2);
 }
 
 .breadcrumbs .current-breadcrumbs,
@@ -1349,7 +1475,6 @@ body {
     box-shadow: 0 0 0 2px #ffffff;
     background-color: #a6b7ae;
     text-shadow: none;
-
 }
 
 /*Стиль кнопки в фильтрах при наведении*/
@@ -1369,10 +1494,6 @@ body {
     outline: 0;
 }
 
-.catalog {
-    width: 1200px;
-}
-
 /*Убираем маркеры из списка товаров*/
 .catalog-list {
     display: flex;
@@ -1385,12 +1506,12 @@ body {
 
 .catalog-item {
     position: relative;
-    width: 22.2%;
+    width: 267px;
     margin-bottom: 30px;
-    margin-right: 2.2%;
+    margin-right: 26px;
 }
 
-catalog-item:nth-child(3)  {
+.catalog-item:nth-child(4n)  {
     margin-right: 0;
 }
 
@@ -1402,7 +1523,6 @@ catalog-item:nth-child(3)  {
     width: 270px;
     padding: 0;
     margin-left: auto;
-    margin-right: 35px;
     margin-bottom: 50px;
     list-style: none;
 }
@@ -1438,9 +1558,13 @@ catalog-item:nth-child(3)  {
 .paginator-list .previous-page,
 .paginator-list .next-page,
 .paginator-list .previous-page:hover,
-.paginator-list .next-page:hover,
-.paginator-list .previous-page:active,
-.paginator-list .next-page:active {
+.paginator-list .next-page:hover {
+    color: transparent;
+}
+
+.paginator-list .previous-page,
+.paginator-list .previous-page:hover,
+.paginator-list .previous-page:active {
     background-color: #849d8f;
 }
 
@@ -1448,7 +1572,7 @@ catalog-item:nth-child(3)  {
     content: "";
     position: absolute;
     bottom: 118px;
-    right: 180px;
+    right: 367px;
     width: 8px;
     height: 12px;
     background-image: url("../img/icon-left-small.svg");
@@ -1459,7 +1583,7 @@ catalog-item:nth-child(3)  {
     content: "";
     position: absolute;
     bottom: 118px;
-    right: 0px;
+    right: 187px;
     width: 8px;
     height: 12px;
     background-image: url("../img/icon-right-small.svg");
