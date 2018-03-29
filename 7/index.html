@@ -225,6 +225,34 @@
           </form>
     </section>
     </div>
-    <script src="js/script.js"></script>
+    <script>
+        var link = document.querySelector(".button-contacts");
+        var popup = document.querySelector(".modal-question");
+        var close = popup.querySelector(".modal-question-close");
+        var overlay = document.querySelector(".modal-question-overlay");
+        
+        link.addEventListener("click", function (evt) {
+            evt.preventDefault(); 
+            popup.classList.add("modal-question-show");
+            overlay.classList.add("modal-question-overlay-show");
+            name.focus();
+        });
+        
+        close.addEventListener("click", function (evt) {
+            evt.preventDefault();
+            popup.classList.remove("modal-question-show");
+            overlay.classList.remove("modal-question-overlay-show");
+        });
+        
+        window.addEventListener("keydown", function (evt) {
+            if (evt.keyCode === 27) {
+                evt.preventDefault();
+                if (popup.classList.contains("modal-question-show"&&overlay.classList.contains("modal-question-overlay-show"))) {
+                    popup.classList.remove("modal-question-show");
+                    overlay.classList.remove("modal-question-overlay-show");
+                }
+            }
+        });
+    </script>
   </body>
 </html>
