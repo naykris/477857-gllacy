@@ -24,7 +24,6 @@ body {
     background-image: url("../img/slider-raspberry-icecream.png");
     background-repeat: no-repeat;
     background-position: center 83px; 
-    transition: background-image 0.5s ease-in-out, background-color 1s ease-in-out;
 }
 
 .site-wrapper::before,
@@ -1192,7 +1191,7 @@ body {
     box-shadow: 0 10px 40px 6px rgba(0, 0, 0, 0.2);
 }
 
-.modal-question-overlay-show {
+.modal-question-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -1200,6 +1199,10 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     z-index:1;
+}
+
+.modal-question-overlay-show {
+    display: block;
 }
 
 .modal-question h2 {
@@ -1321,13 +1324,39 @@ body {
 
 .modal-question-show {
   display: block;
-  animation: modal-question-animation 0.5s;
+  animation: modal-question-animation 0.7s;
+}
+
+.modal-error {
+    animation: error-shake 0.6s;
 }
 
 @keyframes modal-question-animation {
-  0% {transform: translate(-50%, -2000px);}
-  1% {transform: translate(-50%, -190%);}
-  100% {transform: translate(-50%, -50%);}
+  0% {transform: translateY(-2000px);}
+  30% {transform: translateY(-1000px);}
+  100% {transform: translate(0);}
+}
+
+@keyframes error-shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+    
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
 }
 
                                       /*Стили для страницы каталога*/
