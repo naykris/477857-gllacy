@@ -17,10 +17,6 @@ body {
 
 .site-wrapper {
     min-width: 100%;
-    background-color: #849d8f;
-    background-image: url("../img/slider-raspberry-icecream.png");
-    background-repeat: no-repeat;
-    background-position: center 83px; 
 }
 
 .site-wrapper::before,
@@ -174,6 +170,7 @@ body {
     font-weight: 700;
     line-height: 32px;
     border-radius: 25px;
+    margin: 0;
 }
 
 .site-nav-current {
@@ -250,6 +247,7 @@ body {
 }
 
 .user-navigation li {
+    position: relative;
     margin-left: 10px;
     margin-top: 17px;
 }
@@ -288,7 +286,6 @@ body {
 .user-navigation-search {
     right: 420px;
     top: 62px;
-    display: block;
     width: 308px;
     padding: 17px 20px;
     padding-bottom: 0;
@@ -307,6 +304,11 @@ body {
     line-height: 24px;
     font-weight: 400;
     color: #000000;
+}
+
+.search-btn:hover .user-navigation-search,
+.user-navigation-search:hover {
+  display: block;
 }
 
 .login,
@@ -387,6 +389,11 @@ body {
     border-bottom: 1px solid rgba(232, 77, 55, 0.5);
 }
 
+.login-btn:hover .user-navigation-login,
+.user-navigation-login:hover {
+  display: block;
+}
+
 .cart,
 .cart:focus,
 .cart:visited {
@@ -428,6 +435,11 @@ body {
     box-shadow: none;
     background-color: #f8f7f4;
     color: #000000; 
+}
+
+.cart-btn:hover .user-navigation-cart,
+.user-navigation-login:hover {
+  display: block;
 }
 
 .schedule {
@@ -524,18 +536,21 @@ body {
 }
 
 #product-1:checked ~ .site-wrapper {
+    background: url("../img/slider-raspberry-icecream.png") no-repeat center 83px,
+                      radial-gradient(400px 400px at center 300px, #caf0dc, transparent);
     background-color: #849d8f;
-    background-image: url("../img/slider-raspberry-icecream.png");
 }
 
 #product-2:checked ~ .site-wrapper {
+    background: url("../img/slider-lemon-icecream.png") no-repeat center 83px,
+                      radial-gradient(400px 400px at center 300px, #d7ebfc, transparent);
     background-color: #8996a6;
-    background-image: url("../img/slider-lemon-icecream.png");
 }
 
 #product-3:checked ~ .site-wrapper {
+    background: url("../img/strawberry-icecream.png") no-repeat center 83px,
+                      radial-gradient(400px 400px at center 300px, #fae4db, transparent);
     background-color: #9d8b84;
-    background-image: url("../img/strawberry-icecream.png");
 }
 
 .banner-wrapper {
@@ -883,26 +898,22 @@ body {
     padding: 9px 20px;
 }
 
-/*Cтилизация блока с адресом*/
-.map-center {
-    width: 1200px;
-    margin: 0 auto;
-}
-
-.contacts {
-    position: relative;
-}
-
 .contacts iframe {
-    width: 1200px;
+    width: 100%;
     height: 430px;
     border: 0;
+}
+
+.feedback-wrapper {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
 }
 
 .feedback {
     position: absolute;
     bottom: 63px;
-    right: 28px;
+    right: 2.3%;
     width: 305px;
     padding: 0;
     background-color: #fdfefe;
@@ -1160,6 +1171,12 @@ body {
 }
 
 .modal-question {
+    display: none;
+    position: fixed;
+    border-radius: 10px;
+    background-color: #f8f7f4;
+    color: #000000;
+    z-index: 2;
     left: 50%;
     top: 150px;
     width: 425px;   
@@ -1437,7 +1454,8 @@ body {
 
 /*Отдельный стиль для лейблов*/
 .catalog-filters label,
-.catalog-filters legend {
+.catalog-filters legend,
+.price-filter {
     font-size: 14px;
     line-height: 16px;
     font-weight: 500;
@@ -1462,7 +1480,7 @@ body {
 .catalog-filters p,
 .faty-filter .wrapper-filter,
 .fillers .wrapper-filter {
-    background-color: #a6b7ae;
+    background-color: rgba(255, 255, 255, 0.2);
     color: #ffffff;
     border: none;
     border-radius: 30px;
@@ -1502,6 +1520,85 @@ body {
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+.filter-range {
+    width: 220px;
+}
+
+.price-controls {
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px; 
+    font-size: 0;
+}
+
+.range-controls .scale::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 21px;
+    width: 178px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.range-controls .scale::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 59px;
+    width: 86px;
+    height: 4px;
+    background-color: #ffffff;
+}
+
+.price-controls label {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    font-size: 14px;
+    color: transparent;
+}
+
+.price-controls .min-price,
+.price-controls .max-price {
+    width: 178px;
+}
+
+.price-controls input {
+    width: 178px;
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    background: none;
+    border: none;
+}
+
+.range-controls {
+    position: relative;
+}
+
+.range-toggle {
+    position: absolute;
+    top: -29px;
+    left: 46px;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 9px solid #ffffff;
+    border-radius: 50%;
+}
+
+.range-toggle:hover {
+    border-width: 10px;
+    top: -30px;
+    cursor: pointer;
+}
+
+.range-toggle-max {
+    left: 143px;
 }
 
 .faty-filter legend {
@@ -1630,7 +1727,7 @@ body {
     font-weight: 500;
     background-image: none;
     box-shadow: 0 0 0 2px #ffffff;
-    background-color: #a6b7ae;
+    background-color: rgba(255, 255, 255, 0.19);
     text-shadow: none;
     padding: 0 30px;
     height: 32px;
