@@ -1,5 +1,4 @@
-html,
-body {
+html {
   margin: 0;
 }
 
@@ -8,8 +7,6 @@ body {
     min-width: 1200px;
     width: 100%;
     position: relative;
-    
-/*Типографика*/
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -40,7 +37,6 @@ body {
     background-image: url("../img/strawberry-icecream.png");
 }
 
-/*класс для скрытия контента*/ 
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -48,14 +44,12 @@ body {
     clip: rect(0, 0, 0, 0);
 }
 
-/*Центровщик контента на главной странице*/
 .content-center {
     margin: 0 auto;
     padding: 0 2.3%;
     width: 1148px;
 }
 
-/*Стили для кнопок и стилизованных под кнопки ссылок в неактивном состоянии и в посещенном и в фокусе*/
 .btn,
 .btn:visited,
 .btn:focus {
@@ -73,21 +67,18 @@ body {
     text-decoration: none;
 }
 
-/*кнопки при наведении*/
 .btn:hover {
     background-image: linear-gradient(to top, #ed705e, #f58569);
     box-shadow: 0 2px 0 0 #ac1000;
     color: #ffffff;
 }
 
-/*кнопки при нажатии*/
 .btn:active {
     background-image: linear-gradient(to bottom, #d84833, #e0603e);
     box-shadow: 0 -2px 0 0 #952718;
     color: #fceeec;
 }
 
-/*Хэдер*/
 .main-header {
     display: flex;
     flex-wrap: wrap;
@@ -96,7 +87,6 @@ body {
     z-index: 5;
 }
 
-/*Стили для логотипа*/
 .main-header-logo {
     width: 154px;
     height: 64px;
@@ -104,7 +94,6 @@ body {
 }
 
 
-/*Стили для меню в шапке*/
 .main-navigation {
     display: flex;
 }
@@ -124,61 +113,59 @@ body {
     padding: 0;
 }
 
-.site-navigation li {
+.site-nav-item {
     position: relative;
     margin-top: 12px;
+    padding: 0 6px;
 }
 
-/*Базовая стилизация меню сайта*/
-/*Убрали маркеры списков меню*/
 .site-navigation,
 .user-navigation,
-.submenu {
+.submenu,
+.user-navigation {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/*Стили для всех ссылок меню в шапке*/
-.site-navigation .item-menu,
-.site-navigation .item-menu:visited,
-.site-navigation .item-menu:focus {
+.site-navigation .item-link,
+.site-navigation .item-link:visited,
+.site-navigation .item-link:focus {
     font-size: 16px;
     line-height: 32px;
     color: #ffffff;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent 1px);
-    border-radius: none;
+    background: linear-gradient(to top, transparent 4px, rgba(255, 255, 255, 0.2) 4px, transparent 5px);
+    border-radius: 0;
     text-shadow: none;
     box-shadow: none;
     border: none;
-    padding: 0 14px;
+    margin: 0 8px;
+    padding: 4px 0;
 }
 
-/*изменение фона и цвета текста при наведении на пункты меню сайта*/
-.site-navigation .item-menu:hover {
+.site-navigation .item-link:hover {
     background-color: #f8f7f4;
     color: #000000;
     box-shadow: 1px solid #f8f7f4;
-    padding: 5px 14px;
+    border-radius: 25px;
+    margin: 0;
+    padding: 8px;
 }
 
-/*изменение фона и цвета текста при нажатии на пункты меню сайта*/
-.site-navigation .item-menu:active {
+.site-navigation .item-link:active {
     background-color: #ededed;
     color: #000000;
     box-shadow: inset 0 2px 2px 0 #696969;
 }
 
-.site-navigation > li:hover .submenu {
+.site-nav-item:hover .submenu {
     display: block;
 }
 
-/*изменение фона и цвета текста при нахождении пункта меню сайта в фокусе + стиль для обозначения текущей страницы*/
 .site-navigation .current-item-menu,
 .site-navigation .current-item-menu:hover,
 .site-navigation .current-item-menu:active,
-.site-navigation .current-item-menu:visited,
-.site-navigation .menu-item:focus {
+.site-navigation .current-item-menu:visited {
     background-color: #d07058;
     background-image: none;
     color: #ffffff;
@@ -189,7 +176,10 @@ body {
     border-radius: 25px;
 }
 
-/* Фон для субменю*/
+.site-nav-current {
+    padding: 0;
+}
+
 .submenu {
     display: none;
     position: absolute;
@@ -221,16 +211,12 @@ body {
     padding-top: 10px;
 }
 
-.submenu .new-item {
-    font-weight: 700;
-}
-
 .submenu .new-item::after {
     content: "";
     position: absolute;
     width: 128px;
     height: 1px;
-    top: 28px;
+    top: 38px;
     left: 8px;
     background-color: #d1d0ce;
 }
@@ -242,7 +228,6 @@ body {
     padding-top: 10px;
 }
 
-/*изменение фона и цвета текста при наведении на пункты выпадающего меню*/
 .item-submenu,
 .item-submenu:visited {
     color: #000000;
@@ -252,12 +237,14 @@ body {
     text-decoration: none;
 }
 
-/*изменение фона при наведении на пункты выпадающего меню*/
+.submenu .new-item {
+    font-weight: 700;
+}
+
 .item-submenu:hover {
     background-color: #fbded7;
 }
 
-/*изменение фона при нажатии на пункты выпадающего меню*/
 .item-submenu:active {
     background-color: #f6b5a5;
 }
@@ -267,7 +254,6 @@ body {
     margin-top: 17px;
 }
 
-/*базовая стилизация меню пользователя*/
 .search,
 .login,
 .cart,
@@ -460,9 +446,7 @@ body {
     line-height: 30px;
     font-weight: bold;
 }
-                               /*Стили для главной страницы*/
-/*Слайдер*/
-/*убираем маркеры списка*/
+
 .presentation {
     position: relative;
     padding-top: 268px;
@@ -476,7 +460,6 @@ body {
     list-style: none;
 }
 
-/*Заголовки слайдера*/
 .presentation-title {
     width: 700px;
     margin: 0 auto;
@@ -524,6 +507,10 @@ body {
     display: none;
 }
 
+.control-slider-hide {
+    display: none;
+}
+
 #product-1:checked ~ .site-wrapper #slide1,
 #product-2:checked ~ .site-wrapper #slide2,
 #product-3:checked ~ .site-wrapper #slide3 {
@@ -551,7 +538,6 @@ body {
     background-image: url("../img/strawberry-icecream.png");
 }
 
-/*Стили баннеров*/
 .banner-wrapper {
     display: flex;
 }
@@ -565,7 +551,6 @@ body {
     margin-bottom: 35px;
 }
 
-/*Заголовки баннеров*/
 .banner h2 {
     font-size: 35px;
     line-height: 41px;
@@ -575,7 +560,6 @@ body {
     margin-bottom: 16px;
 }
 
-/*Стили для абзацев баннеров*/
 .banner p {
     color: #ffffff;
     font-weight: 700;
@@ -586,14 +570,12 @@ body {
     margin-bottom: 44px;
 }
 
-/*Фоновые цвет и картина для баннера с малинкой*/
 .raspberries {
     background-color: #b1011f;
     background-image: url("../img/raspberries.jpg");
     background-repeat: no-repeat;
 }
 
-/*Фоновые цвет и картина для баннера с шоколадкой*/
 .chocolate {
     background-color: #5b351f;
     background-image: url("../img/chocolate.jpg");
@@ -616,8 +598,6 @@ body {
     width: 190px;
 }
 
-/*Стили ХИТ-листа*/
-/*Убрали маркеры списка*/
 .hits-list,
 .catalog-list {
     display: flex;
@@ -642,8 +622,6 @@ body {
 
 .hit,
 .icecream {
-    font-size: 16px;
-    line-height: 22px;
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -652,8 +630,7 @@ body {
     font-weight: 500;
     display: block;
     color: #ffffff;
-    padding: 6px 13px 22px;
-    margin-bottom: 20px;
+    padding: 6px 13px 23px;
 }
 
 .hit:hover,
@@ -674,6 +651,8 @@ body {
 .hit:hover .btn,
 .icecream:hover .btn {
     display: inline-block;
+    margin: 0;
+    margin-top: 18px;
 }
 
 .hit::before {
@@ -696,9 +675,9 @@ body {
 .icecream-title {
     display: inline;
     background: linear-gradient(to top, rgba(255, 255, 255, 1), transparent 1px);
+    margin: 0;
 }
 
-/*Стилизация для ценников*/
 .price {
     position: absolute;
     font-size: 45px;
@@ -722,8 +701,6 @@ body {
     left: 3px;
 }
 
-/*Стилизация блока promo*/
-/*Задаем цвет фона и фоновое изображение блоку*/
 .promo {
     width: 100%;
     min-height: 267px;
@@ -736,7 +713,7 @@ body {
     border-radius: 20px;
     border: 1px solid transparent;
 }
-/*убираем маркеры списка*/
+
 .promo-list {
     position: relative;
     padding: 0;
@@ -749,7 +726,6 @@ body {
     margin-bottom: 0;
 }
 
-/*Заголовок*/
 .promo h2 {
     font-size: 24px;
     line-height: 30px;
@@ -759,7 +735,6 @@ body {
     margin-left: 21px;
 }
 
-/*Стили для текста внутри блока*/
 .promo-item {
     width: 476px;
     font-size: 16px;
@@ -814,13 +789,13 @@ body {
 /*Стили для blognews*/
 .blognews,
 .subscribe {
-    border-radius: 10px;
+    border-radius: 15px;
+    position: relative;
 }
 /*Фоновый цвет для блока*/
 .blognews {
-    position: relative;
-    width: 561px;
-    min-height: 220px;
+    display: flex;
+    width: 560px;
     background-color: #ffffff;
     overflow: hidden;
 }
@@ -831,9 +806,9 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
-    margin-top: 23px;
+    margin: 0;
+    margin-top: 19px;
     margin-left: 20px;
-    margin-bottom: 5px;
 }
 
 /*Стили для ссылки*/
@@ -847,6 +822,7 @@ body {
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
+    margin-top: 48px;
 }
 
 .blognews img {
@@ -859,13 +835,11 @@ body {
 /*Стилизация блока подписки*/
 /*Фоновые цвет и изображение*/
 .subscribe {
-    position: relative;
-    width: 547px;
-    min-height: 206px;
+    width: 554px;
     background-color: #f8f7f4;
     background-image: repeating-linear-gradient(135deg, #f8f7f4, #f8f7f4 10px, #92cdff 10px, #92cdff 20px, #f8f7f4 20px, #f8f7f4 30px, #fe9e90 30px, #fe9e90 40px);
     color: #5a5a5a;
-    margin-left: 26px;
+    margin-left: 28px;
     padding: 6px;
 }
 
@@ -881,14 +855,18 @@ body {
 
 .subscribe p {
     margin: 0;
+    margin-bottom: 38px;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
-    margin-bottom: 36px;
+}
+
+.subscribe form {
+    display: flex;
+    justify-content: space-between;
 }
 
 .subscribe input {
-    float: left;
     width: 350px;
     border-radius: 5px;
     border: 1px solid #d3d3d2;
@@ -898,7 +876,6 @@ body {
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 15px;
-    margin-right: 10px;
 }
 
 .subscribe .btn {
@@ -919,6 +896,7 @@ body {
 .contacts iframe {
     width: 1200px;
     height: 430px;
+    border: 0;
 }
 
 .feedback {
@@ -1229,9 +1207,9 @@ body {
 }
 
 .modal-question input {
+    width: 267px;
     margin-bottom: 18px;
     padding-left: 16px;
-    padding-right: 144px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
@@ -1320,6 +1298,7 @@ body {
     height: 17px;
     cursor: pointer;
     font-size: 0; 
+    outline: none;
 }
 
 .modal-question-show {
@@ -1556,31 +1535,20 @@ body {
     position: absolute;
     left: -33px;
     top: 0;
-    width: 16px;
-    height: 16px;
-    border: 3px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
+    background-image: url("../img/radio-off.svg");
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    width: 23px;
+    height: 23px;
 }
 
 .fat-filter:focus + label::before,
 .fat-filter:hover + label::before {
-    border-color: #ffffff;
+    opacity: 1;
 }
 
-.fat-filter:checked + label::after {
-    content: "";
-    position: absolute;
-    top: 6.5px;
-    left: -26.5px;
-    width: 9px;
-    height: 9px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-}
-
-.radio-filter:checked:focus+label::after,
-.radio-filter:checked:hover+label::after {
-    background-color:#fff
+.fat-filter:checked + label::before {
+    background-image: url("../img/radio-on.svg");
 }
 
 .faty-filter .wrapper-filter {
@@ -1633,28 +1601,23 @@ body {
     width: 21px;
     height: 21px;
     background-image: url("../img/checkbox-off.svg");
-}
-
-.fillers-checkbox:hover+label::before {
-    border-color:#ffffff;
-}
-
-.fillers-checkbox:checked+label::after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: -31px;
-    width: 24px;
-    height: 21px;
-    background-image: url("../img/checkbox-on.svg");
-    background-repeat: no-repeat;
-    background-position: 0 0;
     opacity: 0.8;
 }
 
-.fillers-checkbox:checked:focus+label::after,
-.fillers-checkbox:checked:hover+label::after {
-    opacity:1;
+.fillers-checkbox:checked + label::before {
+    background-image: url("../img/checkbox-on.svg");
+}
+
+.fillers-checkbox:hover + label::before,
+.fillers-checkbox:checked:hover + label::before {
+    opacity: 1;
+}
+
+.fillers-checkbox:disabled + label::before,
+.fillers-checkbox:checked:disabled + label::before, 
+.fat-filter:disabled + label::before,
+.fat-filter:checked:disabled + label::before {
+    opacity: 0.4;
 }
 
 /*Стиль для кнопки в фильтрах*/
