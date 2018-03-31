@@ -5,7 +5,7 @@ html {
 body {
     margin: 0 auto;
     min-width: 1200px;
-    width: 100%;
+    height: 100%;
     position: relative;
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
@@ -940,6 +940,7 @@ body {
     font-weight: 700;
 }
 
+
 .contacts .btn {
     display: block;
     width: 250px;
@@ -953,7 +954,7 @@ body {
 /*Убираем маркеры списков*/
 .main-footer {
     margin-top: 15px;
-    margin-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 .footer-center {
@@ -1483,7 +1484,7 @@ body {
 .catalog-filters select {
     display: inline-block;
     padding: 8px 14px;
-    padding-right: 35px;
+    padding-right: 13px;
     margin-bottom: 15px;
     vertical-align:top;
     color: #ffffff;
@@ -1643,12 +1644,6 @@ body {
 }
 
 /*Стиль выпадающего списка при наведении*/
-.catalog-filters select {
-    -webkit-appearance: none;
-    -moz-appearance: none; 
-    appearance: none;
-}
-
 .catalog-filters select:hover {
     color: #000000;
 }
