@@ -5,7 +5,7 @@ html {
 body {
     margin: 0 auto;
     min-width: 1200px;
-    width: 100%;
+    height: 100%;
     position: relative;
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
@@ -142,7 +142,6 @@ body {
 .site-navigation .item-link:hover {
     background-color: #f8f7f4;
     color: #000000;
-    box-shadow: 1px solid #f8f7f4;
     border-radius: 25px;
     margin: 0;
     padding: 8px;
@@ -629,6 +628,7 @@ body {
 .catalog-item {
     position: relative;
     width: 292px;
+    margin-bottom: 20px;
 }
 
 .hits-item {
@@ -699,7 +699,7 @@ body {
     line-height: 45px;
     font-weight: 700;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);    
-    top: 217px;
+    top: 215px;
     margin: 0;
 }
 
@@ -807,7 +807,7 @@ body {
     border-radius: 15px;
     position: relative;
 }
-/*Фоновый цвет для блока*/
+
 .blognews {
     display: flex;
     width: 560px;
@@ -815,7 +815,6 @@ body {
     overflow: hidden;
 }
 
-/*Заголовок*/
 .blognews h2 {
     color: #000000;
     font-weight: 500;
@@ -941,6 +940,7 @@ body {
     font-weight: 700;
 }
 
+
 .contacts .btn {
     display: block;
     width: 250px;
@@ -954,7 +954,7 @@ body {
 /*Убираем маркеры списков*/
 .main-footer {
     margin-top: 15px;
-    margin-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 .footer-center {
@@ -1267,29 +1267,14 @@ body {
 }
 
 /*Стилизация плейсхолдеров в модалках*/
-.modal input::-webkit-input-placeholder {
-    color: #b4b4b4;
-}
-
-.modal input::-moz-placeholder {
-    color: #b4b4b4;}
-
-.modal input:-moz-placeholder  {
-    color: #b4b4b4;}
-
-.modal input:-ms-input-placeholder  {
-    color: #b4b4b4;}
-
-.modal-question textarea::-webkit-input-placeholder {
-    color: #b4b4b4;}
-
-.modal-question textarea::-moz-placeholder {
-    color: #b4b4b4;}
-
-.modal-question textarea:-moz-placeholder  {
-    color: #b4b4b4;}
-
-.modal-question textarea:-ms-input-placeholder  {
+.modal input::-webkit-input-placeholder,  
+.modal input::-moz-placeholder,
+.modal input:-moz-placeholder,
+.modal input:-ms-input-placeholder,  
+.modal-question textarea::-webkit-input-placeholder, 
+.modal-question textarea::-moz-placeholder, 
+.modal-question textarea:-moz-placeholder, 
+.modal-question textarea:-ms-input-placeholder {
     color: #b4b4b4;}
 
 .modal fieldset {
@@ -1499,6 +1484,7 @@ body {
 .catalog-filters select {
     display: inline-block;
     padding: 8px 14px;
+    padding-right: 13px;
     margin-bottom: 15px;
     vertical-align:top;
     color: #ffffff;
@@ -1524,10 +1510,11 @@ body {
 
 .filter-range {
     width: 220px;
+    margin-right: 15px;
 }
 
 .price-controls {
-    height: 38px;
+    height: 36px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 30px; 
     font-size: 0;
@@ -1536,9 +1523,9 @@ body {
 .range-controls .scale::after {
     content: "";
     position: absolute;
-    top: -20px;
+    top: -21px;
     left: 21px;
-    width: 178px;
+    width: 173px;
     height: 4px;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
@@ -1547,8 +1534,8 @@ body {
 .range-controls .scale::before {
     content: "";
     position: absolute;
-    top: -20px;
-    left: 59px;
+    top: -21px;
+    left: 52px;
     width: 86px;
     height: 4px;
     background-color: #ffffff;
@@ -1582,23 +1569,23 @@ body {
 
 .range-toggle {
     position: absolute;
-    top: -29px;
-    left: 46px;
+    top: -30px;
+    left: 33px;
     width: 4px;
     height: 4px;
     background-color: rgba(255, 255, 255, 0.2);
-    border: 9px solid #ffffff;
+    border: 8px solid #ffffff;
     border-radius: 50%;
 }
 
 .range-toggle:hover {
-    border-width: 10px;
+    border-width: 9px;
     top: -30px;
     cursor: pointer;
 }
 
 .range-toggle-max {
-    left: 143px;
+    left: 133px;
 }
 
 .faty-filter legend {
@@ -1609,7 +1596,8 @@ body {
 .filter-option {
     display: inline-block;
     vertical-align: top;
-    padding: 0 17px;
+    padding-right: 17px;
+    padding-left: 14px;
 }
 
 .catalog-filters-list .filter-option:nth-child(4) {
@@ -1620,6 +1608,7 @@ body {
     position: relative;
     display: block;
     cursor: pointer;
+    margin-bottom: 0;
 }
 
 .checklist input,
@@ -1631,7 +1620,7 @@ body {
     content: "";
     position: absolute;
     left: -33px;
-    top: 0;
+    top: -2px;
     background-image: url("../img/radio-off.svg");
     background-repeat: no-repeat;
     opacity: 0.8;
@@ -1649,15 +1638,9 @@ body {
 }
 
 .faty-filter .wrapper-filter {
-    padding: 7px 15px 6px;
+    padding: 7px 15px 9px;
     margin-top: 6px;
     margin-right: 0;
-}
-
-.catalog-filters input[type="range"] {
-    padding: 8px 0;
-    padding-bottom: 4px;
-    width: 219px;
 }
 
 /*Стиль выпадающего списка при наведении*/
@@ -1682,7 +1665,7 @@ body {
     padding-left: 7px;
     padding-top: 8px;
     padding-right: 20px;
-    padding-bottom: 6px;
+    padding-bottom: 9px;
 }
 
 .checklist {
@@ -1698,11 +1681,13 @@ body {
     width: 21px;
     height: 21px;
     background-image: url("../img/checkbox-off.svg");
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 
 .fillers-checkbox:checked + label::before {
     background-image: url("../img/checkbox-on.svg");
+    background-repeat: no-repeat;
 }
 
 .fillers-checkbox:hover + label::before,
@@ -1729,7 +1714,7 @@ body {
     box-shadow: 0 0 0 2px #ffffff;
     background-color: rgba(255, 255, 255, 0.19);
     text-shadow: none;
-    padding: 0 30px;
+    padding: 0 29px;
     height: 32px;
     margin-top: 25px;
     outline: none;
@@ -1775,7 +1760,7 @@ body {
 .pagination-item:visited {
     text-decoration: none;
     font-size: 16px;
-    line-height: 18pf;
+    line-height: 18px;
     font-weight: 500;
     color: #ffffff;
     padding: 3px 8px;

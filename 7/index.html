@@ -41,6 +41,7 @@
                           <li class="search-btn">
                               <a class="btn search" href="#"></a>
                               <section class="modal user-navigation-search">
+                                 <h2 class="visually-hidden">Введите свой запрос для поиска</h2>
                                   <form>
                                       <input type="search" id="search-field" name="search" placeholder="Что ищем?">
                                       <label class="visually-hidden" for="search-field">Поиск</label>
@@ -50,6 +51,7 @@
                           <li class="login-btn">
                               <a class="btn login" href="#">Вход</a>
                               <section class="modal user-navigation-login">
+                                  <h2 class="visually-hidden">Введите свой логин и пароль для входа</h2>
                                   <form action="https://echo.htmlacademy.ru" method="post">
                                       <fieldset>
                                           <legend class="visually-hidden">Вход в личный кабинет</legend>
@@ -86,15 +88,15 @@
                      </div>
                     <h2 class="visually-hidden">Новые предложения</h2>
                       <ul class="presentation-list">
-                          <li class="presentation-item slide" id="slide1">
+                          <li class="slide" id="slide1">
                               <h2 class="presentation-title">Крем-брюле и пломбир<br> с малиновым джемом</h2>
                               <a class="btn slider-button" href="#">Давайте оба!</a>
                           </li>
-                          <li class="presentation-item slide" id="slide2">
+                          <li class="slide" id="slide2">
                               <h2 class="presentation-title">Шоколадный пломбир<br> и лимонный сорбет</h2>
                               <a class="btn slider-button" href="#">Давайте оба!</a>
                           </li>
-                          <li class="presentation-item slide" id="slide3">
+                          <li class="slide" id="slide3">
                               <h2 class="presentation-title">Пломбир с помадкой<br> и клубничный щербет</h2>
                               <a class="btn slider-button" href="#">Давайте оба!</a>
                           </li>
@@ -165,6 +167,7 @@
                           <img src="img/blognews-strawberry.jpg" width="450" height="410" alt="щербет с клубникой">
                       </article>
                       <section class="subscribe">
+                          <h2 class="visually-hidden">Подпишитесь на нашу рассылку</h2>
                           <div>
                               <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
                               <form action="https://echo.htmlacademy.ru" method="post">
@@ -216,8 +219,9 @@
                  </div>
               </footer>
           </div>
-      
-    <section class="modal modal-question">
+      </div>
+        
+      <section class="modal modal-question">
           <h2>Мы обязательно вам ответим!</h2>
           <form action="https://echo.htmlacademy.ru" method="post">
               <fieldset>
@@ -233,36 +237,34 @@
           <button class="modal-question-close" type="button" value="modal-question-close">Закрыть</button>
       </section>
       <div class="modal modal-question-overlay"></div>
-      
-    </div>
-    <script>
-        var link = document.querySelector(".button-contacts");
-        var popup = document.querySelector(".modal-question");
-        var close = popup.querySelector(".modal-question-close");
-        var overlay = document.querySelector(".modal-question-overlay");
+      <script>
+          var link = document.querySelector(".button-contacts");
+          var popup = document.querySelector(".modal-question");
+          var close = popup.querySelector(".modal-question-close");
+          var overlay = document.querySelector(".modal-question-overlay");
         
-        link.addEventListener("click", function (evt) {
+          link.addEventListener("click", function (evt) {
             evt.preventDefault(); 
             popup.classList.add("modal-question-show");
             overlay.classList.add("modal-question-overlay-show");
             name.focus();
-        });
-        
-        close.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            popup.classList.remove("modal-question-show");
-            overlay.classList.remove("modal-question-overlay-show");
-        });
-        
-        window.addEventListener("keydown", function (evt) {
-            if (evt.keyCode === 27) {
-                evt.preventDefault();
-                if (popup.classList.contains("modal-question-show"&&overlay.classList.contains("modal-question-overlay-show"))) {
-                    popup.classList.remove("modal-question-show");
-                    overlay.classList.remove("modal-question-overlay-show");
-                }
-            }
-        });
-    </script>
-  </body>
+          });
+
+          close.addEventListener("click", function (evt) {
+              evt.preventDefault();
+              popup.classList.remove("modal-question-show");
+              overlay.classList.remove("modal-question-overlay-show");
+          });
+
+          window.addEventListener("keydown", function (evt) {
+              if (evt.keyCode === 27) {
+                  evt.preventDefault();
+                  if (popup.classList.contains("modal-question-show"&&overlay.classList.contains("modal-question-overlay-show"))) {
+                      popup.classList.remove("modal-question-show");
+                      overlay.classList.remove("modal-question-overlay-show");
+                  }
+              }
+          });
+      </script>
+    </body>
 </html>
