@@ -491,22 +491,42 @@ body {
     color: transparent;
 }
 
-.delete-item::before {
+.row-cart-1::before,
+.row-cart-1::after {
     content: "";
     position: absolute;
-    width: 11px;
-    height: 11px;
-    background-image: url("../img/cross-small.svg");
-    background-repeat: no-repeat;
+    width: 15px;
+    height: 1px;
+    background-color: #000000;
     left: 21px;
+    top: 40px;
 }
 
 .row-cart-1::before {
-    top: 32px;
+    transform: rotate(45deg);
+}
+
+.row-cart-1::after {
+    transform: rotate(135deg);
+}
+
+.row-cart-2::before,
+.row-cart-2::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background-color: #000000;
+    left: 21px;
+    top: 85px;
 }
 
 .row-cart-2::before {
-    top: 78px;
+    transform: rotate(45deg);
+}
+
+.row-cart-2::after {
+    transform: rotate(135deg);
 }
 
 .schedule {
@@ -1548,6 +1568,10 @@ body {
     background-position: 167px 15px;
 }
 
+select::-ms-expand {
+    display: none;
+}
+
 .catalog-filters select:focus,
 .catalog-filters select:hover,
 .catalog-filters select:active {
@@ -1620,7 +1644,7 @@ body {
 
 .range-toggle {
     position: absolute;
-    top: -28px;
+    top: -27px;
     left: 33px;
     width: 4px;
     height: 4px;
@@ -1688,23 +1712,35 @@ body {
 .fat-filter + label::before {
     content: "";
     position: absolute;
-    left: 0;
     top: -3px;
-    background-image: url("../img/radio-off.svg");
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    width: 23px;
-    height: 23px;
+    left: -2px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
 }
 
 .fat-filter:focus + label::before,
 .fat-filter:hover + label::before {
-    opacity: 1;
+    border-color: #ffffff;
+    cursor: pointer;
+    
 }
 
-.fat-filter:checked + label::before {
-    background-image: url("../img/radio-on.svg");
-    background-size: 24px 21px;
+.fat-filter:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.fat-filter:checked:hover + label::after {
+    background-color: #ffffff;
+    cursor: pointer;
 }
 
 .catalog-filters select:hover {
