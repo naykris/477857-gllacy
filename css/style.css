@@ -1574,7 +1574,7 @@ body {
 .range-controls .scale::after {
     content: "";
     position: absolute;
-    top: -21px;
+    top: -19px;
     left: 21px;
     width: 173px;
     height: 4px;
@@ -1585,7 +1585,7 @@ body {
 .range-controls .scale::before {
     content: "";
     position: absolute;
-    top: -21px;
+    top: -19px;
     left: 52px;
     width: 86px;
     height: 4px;
@@ -1620,7 +1620,7 @@ body {
 
 .range-toggle {
     position: absolute;
-    top: -30px;
+    top: -28px;
     left: 33px;
     width: 4px;
     height: 4px;
@@ -1647,7 +1647,10 @@ body {
 }
 
 .faty-filter .wrapper-filter {
-    padding: 7px 0 9px 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 0;
     margin-top: 6px;
     margin-right: 0;
 }
@@ -1686,7 +1689,7 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    top: -2px;
+    top: -3px;
     background-image: url("../img/radio-off.svg");
     background-repeat: no-repeat;
     opacity: 0.8;
