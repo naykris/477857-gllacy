@@ -19,20 +19,6 @@ body {
     min-width: 100%;
 }
 
-.site-wrapper::before,
-.site-wrapper::after {
-    content: "";
-    visibility: hidden;
-}
-
-.site-wrapper::before {
-    background-image: url("../img/slider-lemon-icecream.png");
-}
-
-.site-wrapper::after {
-    background-image: url("../img/strawberry-icecream.png");
-}
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -89,7 +75,6 @@ body {
     margin-right: 10px;
 }
 
-
 .main-navigation {
     display: flex;
 }
@@ -98,7 +83,6 @@ body {
     display: flex;
     justify-content: flex-end;
     width: 397px;
-    position: relative;
 }
 
 .site-navigation {
@@ -246,9 +230,14 @@ body {
 }
 
 .user-navigation li {
-    position: relative;
     margin-left: 10px;
     margin-top: 17px;
+}
+
+.search-btn,
+.login-btn,
+.cart-btn-full {
+    position: relative;
 }
 
 .search,
@@ -283,9 +272,9 @@ body {
 }
 
 .user-navigation-search {
-    right: 420px;
-    top: 62px;
-    width: 308px;
+    position: absolute;
+    right: 0px;
+    top: 33px;
     padding: 17px 20px;
     padding-bottom: 0;
     box-shadow: 0 10px 40px 6px rgba(0, 0, 0, 0.2);
@@ -303,6 +292,7 @@ body {
     line-height: 24px;
     font-weight: 400;
     color: #000000;
+    box-sizing: border-box;
 }
 
 .search-btn:hover .user-navigation-search,
@@ -335,10 +325,10 @@ body {
 }
 
 .user-navigation-login {
-    right: 315px;
-    top: 62px;
+    position: absolute;
+    right: 0px;
+    top: 33px;
     display: block;
-    width: 237px;
     padding: 20px;
     padding-top: 0;
     box-shadow: 0 10px 40px 6px rgba(0, 0, 0, 0.2);
@@ -436,9 +426,87 @@ body {
     color: #000000; 
 }
 
-.cart-btn:hover .user-navigation-cart,
-.user-navigation-login:hover {
+.cart-btn-full:hover .user-navigation-cart,
+.user-navigation-cart:hover {
   display: block;
+}
+
+.user-navigation-cart {
+    box-sizing: border-box;
+    width: 539px;
+    position: absolute;
+    top: 33px;
+    right: 0px;
+    padding: 15px 20px;
+    padding-top: 30px;
+    box-shadow: 0 10px 40px 6px rgba(0, 0, 0, 0.2);
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.user-navigation-cart td {
+    padding: 0;
+    vertical-align: top;
+}
+
+.user-navigation-cart img {
+    float: left;
+    margin-right: 14px;
+    margin-left: 14px;
+    margin-bottom: 20px;
+    margin-top: -8px;
+}
+
+.user-navigation-cart p {
+    margin: 0;
+    margin-left: 65px;
+    margin-right: 23px;
+    padding-bottom: 5px;
+}
+
+.amount td {
+    font-weight: 700;
+    text-align: right;
+    border-top: 1px solid #ccccc9;
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+
+.ice-price-cart {
+    color: #999999;
+    background-color: #f8f7f4;
+    margin-right: 33px;
+}
+
+.user-navigation-cart .btn {
+    padding: 9px 15px;
+    margin-left: 320px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.delete-item {
+    font-size: 1px;
+    color: transparent;
+}
+
+.delete-item::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-image: url("../img/cross-small.svg");
+    background-repeat: no-repeat;
+    left: 21px;
+}
+
+.row-cart-1::before {
+    top: 32px;
+}
+
+.row-cart-2::before {
+    top: 78px;
 }
 
 .schedule {
@@ -512,6 +580,10 @@ body {
     border: 2px solid #ffffff;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.slider-controls label:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .slide {
@@ -645,7 +717,7 @@ body {
     font-weight: 500;
     display: block;
     color: #ffffff;
-    padding: 6px 13px 23px;
+    padding: 6px 13px 14px;
 }
 
 .hit:hover,
@@ -684,6 +756,7 @@ body {
     border-style: none;
     max-width: 100%;
     height: auto;
+    margin-bottom: 7px;
 }
 
 .hit-title,
@@ -720,7 +793,7 @@ body {
     width: 100%;
     min-height: 267px;
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 37px;
     padding: 0;
     background-color: #ebdfc4;
     background-image: url("../img/wafer.png");
@@ -756,7 +829,7 @@ body {
     font-weight: 400;
     line-height: 22px;
     color: #000000;
-    margin-bottom: 26px;
+    margin-bottom: 25px;
 }
 
 .promo-item:nth-child(1)::before,
@@ -801,7 +874,6 @@ body {
     margin-bottom: 41px;
 }
 
-/*Стили для blognews*/
 .blognews,
 .subscribe {
     border-radius: 15px;
@@ -825,7 +897,6 @@ body {
     margin-left: 20px;
 }
 
-/*Стили для ссылки*/
 .blognews a {
     position: absolute;
     z-index: 1;
@@ -846,8 +917,6 @@ body {
     transform: scale(0.7);
 }
 
-/*Стилизация блока подписки*/
-/*Фоновые цвет и изображение*/
 .subscribe {
     width: 554px;
     background-color: #f8f7f4;
@@ -869,7 +938,7 @@ body {
 
 .subscribe p {
     margin: 0;
-    margin-bottom: 38px;
+    margin-bottom: 37px;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
@@ -881,7 +950,7 @@ body {
 }
 
 .subscribe input {
-    width: 350px;
+    width: 352px;
     border-radius: 5px;
     border: 1px solid #d3d3d2;
     font-size: 16px;
@@ -894,7 +963,7 @@ body {
 
 .subscribe .btn {
     width: 130px;
-    padding: 9px 20px;
+    padding: 7px 22px;
 }
 
 .contacts iframe {
@@ -910,11 +979,12 @@ body {
 }
 
 .feedback {
+    box-sizing: border-box;
+    padding: 30px 27px;
     position: absolute;
-    bottom: 63px;
-    right: 2.3%;
+    bottom: 70px;
+    right: 26px;
     width: 305px;
-    padding: 0;
     background-color: #fdfefe;
     color: #000000;
     border-radius: 10px;
@@ -924,37 +994,40 @@ body {
 }
 
 .feedback p {
-    margin: 30px 0;
+    width: 256px;
+    margin: 0;
+    margin-bottom: 28px;
     text-align: left;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-    margin-left: 30px;
-    margin-right: 60px;
+}
+
+.feedback p:first-of-type {
+    margin-bottom: 20px;
 }
 
 .feedback span {
     color: #000000;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 24px;
     font-weight: 700;
 }
-
 
 .contacts .btn {
     display: block;
     width: 250px;
     line-height: 45px;
     height: 45px;
-    margin-left: 30px;
-    margin-bottom: 30px;
 }
 
-/*Cтилизация футера*/
-/*Убираем маркеры списков*/
 .main-footer {
-    margin-top: 15px;
-    padding-bottom: 25px;
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+
+.main-footer-inner {
+    margin-top: 17px;
 }
 
 .footer-center {
@@ -972,7 +1045,6 @@ body {
     min-height: 40px;
 }
 
-/*Обнулили шрифт, потом вставятся иконки*/
 .footer-social {
     display: flex;
     font-size: 0;
@@ -987,7 +1059,6 @@ body {
     margin-left: 15px;
 }
 
-/*Стилизация иконок соц.сетей в не активном состоянии и в фокусе*/
 .social-tw,
 .social-in,
 .social-fb,
@@ -999,30 +1070,25 @@ body {
     display: block;
     height: 32px;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
 }
 
-/*Иконка твиттера*/
 .social-tw::before {
     content: url("../img/twitter.svg");
 }
 
-/*Иконка инстаграма*/
 .social-in::before {
     content: url("../img/instagram.svg");
 }
 
-/*Иконка фейсбука*/
 .social-fb::before {
     content: url("../img/fb.svg");
 }
 
-/*Иконка Вконтакте*/
 .social-vk::before {
     content: url("../img/vk.svg");
 }
 
-/*Стилизация иконок соц.сетей при наведении и нажатии*/
 .social-tw:hover,
 .social-in:hover,
 .social-fb:hover,
@@ -1034,8 +1100,6 @@ body {
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.7);
 }
 
-/*Стилизуем иконки соцсетей футера*/
-/*Общие размеры иконок и прозрачность в обычном состоянии*/
 .social-tw::before,
 .social-in::before,
 .social-fb::before,
@@ -1045,7 +1109,6 @@ body {
     opacity: 0.8;
 }
 
-/*Изменение прозрачности при наведенеии у иконок*/
 .social-tw:hover::before,
 .social-in:hover::before,
 .social-fb:hover::before,
@@ -1054,7 +1117,6 @@ body {
     opacity: 1;
 }
 
-/*Изменение прозрачности иконок при нажатии*/
 .social-tw:active::before,
 .social-in:active::before,
 .social-fb:active::before,
@@ -1062,7 +1124,6 @@ body {
     opacity: 0.7;
 }
 
-/*Стилизация блока информации для посетителя*/
 .footer-info {
     position: relative;
     display: flex;
@@ -1087,7 +1148,6 @@ body {
     margin-left: -24px;
 }
 
-/*Отдельный стиль ссылки для поставщиков*/
 .footer-info .provider {
     font-weight: 700;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -1123,7 +1183,6 @@ body {
     color: #ffffff;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    
 }
 
 .footer-info a:hover,
@@ -1133,6 +1192,7 @@ body {
 }
 
 .footer-logo p,
+.footer-logo a,
 .footer-copyright,
 .footer-copyright:focus,
 .footer-copyright:visited {
@@ -1160,10 +1220,8 @@ body {
     width: 190px;
 }
 
-/*Форма обратной связи*/
 .modal {
     display: none;
-    position: fixed;
     border-radius: 10px;
     background-color: #f8f7f4;
     color: #000000;
@@ -1171,6 +1229,7 @@ body {
 }
 
 .modal-question {
+    position: fixed;
     display: none;
     position: fixed;
     border-radius: 10px;
@@ -1209,7 +1268,6 @@ body {
     font-weight: 500;
 }
 
-/*Поля формы, когда она yt активна и когда в фокусе*/
 .modal input,
 .modal input[type="email"],
 .modal input[type="password"],
@@ -1248,7 +1306,6 @@ body {
     height: 155px;
 }
 
-/*Поля формы обратной связи при наведении*/
 .modal input:hover,
 .modal input[type="email"]:hover,
 .modal input[type="password"]:hover,
@@ -1257,7 +1314,6 @@ body {
     outline: none;
 }
 
-/*Поля формы в активном состоянии*/
 .modal input:active,
 .modal input[type="email"]:active,
 .modal input[type="password"]:active,
@@ -1266,7 +1322,6 @@ body {
     outline: none;
 }
 
-/*Стилизация плейсхолдеров в модалках*/
 .modal input::-webkit-input-placeholder,  
 .modal input::-moz-placeholder,
 .modal input:-moz-placeholder,
@@ -1341,7 +1396,6 @@ body {
 }
 
                                       /*Стили для страницы каталога*/
-/*Стили для "хлебных крошек"*/
 .breadcrumbs {
     display: flex;
     position: relative;
@@ -1417,7 +1471,6 @@ body {
     border: none;
 }
 
-/*Стиль для заголовка страницы*/
 .main-container h1 {
     margin-top: 0;
     margin-bottom: 27px;
@@ -1437,7 +1490,6 @@ body {
     flex-wrap: wrap;
 }
 
-/*Отдельный стиль для лейблов*/
 .catalog-filters label,
 .catalog-filters legend,
 .price-filter {
@@ -1460,14 +1512,12 @@ body {
     font-weight: 500;
 }
 
-/*Фоновый цвет для всех форм в фильтрах*/
 .catalog-filters select,
 .catalog-filters p,
-.faty-filter .wrapper-filter,
-.fillers .wrapper-filter {
+.faty-filter .wrapper-filter {
     background-color: rgba(255, 255, 255, 0.2);
     color: #ffffff;
-    border: none;
+    border: 0;
     border-radius: 30px;
     padding: 0;
     margin: 0;
@@ -1481,31 +1531,32 @@ body {
     border: none;
 }
 
-.catalog-filters select {
+.catalog-filters select,
+.catalog-filters  select:visited {
     display: inline-block;
     padding: 8px 14px;
-    padding-right: 13px;
+    padding-right: 35px;
     margin-bottom: 15px;
     vertical-align:top;
-    color: #ffffff;
-    border: 0;
+    font-size: 16px;
+    line-height: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../img/select-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 167px 15px;
 }
 
 .catalog-filters select:focus,
-.catalogfilters:hover {
+.catalog-filters select:hover,
+.catalog-filters select:active {
     color: #323232;
 }
 
-.catalog-filters select:focus,
-.catalog-filters select:hover{
-    color: #323232;
-}
-
-.catalog-filters-list {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+.catalog-filters select:hover,
+.catlog-filters select:active {
+    background-image: url("../img/select-arrow-dark.svg");
 }
 
 .filter-range {
@@ -1514,7 +1565,7 @@ body {
 }
 
 .price-controls {
-    height: 36px;
+    height: 34px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 30px; 
     font-size: 0;
@@ -1574,18 +1625,31 @@ body {
     width: 4px;
     height: 4px;
     background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px transparent;
     border: 8px solid #ffffff;
     border-radius: 50%;
 }
 
 .range-toggle:hover {
-    border-width: 9px;
-    top: -30px;
     cursor: pointer;
+    box-shadow: 0 0 0 2px #ffffff;
 }
 
 .range-toggle-max {
     left: 133px;
+}
+
+.catalog-filters-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.faty-filter .wrapper-filter {
+    padding: 7px 0 9px 15px;
+    margin-top: 6px;
+    margin-right: 0;
 }
 
 .faty-filter legend {
@@ -1596,8 +1660,6 @@ body {
 .filter-option {
     display: inline-block;
     vertical-align: top;
-    padding-right: 17px;
-    padding-left: 14px;
 }
 
 .catalog-filters-list .filter-option:nth-child(4) {
@@ -1605,21 +1667,25 @@ body {
 }
 
 .filter-option label {
-    position: relative;
     display: block;
     cursor: pointer;
-    margin-bottom: 0;
 }
 
 .checklist input,
-.filter-option input {
+.catalog-filters-list input {
     display:none;
+}
+
+.catalog-filters-list li {
+    position: relative;
+    padding-right: 20px;
+    padding-left: 12px;
 }
 
 .fat-filter + label::before {
     content: "";
     position: absolute;
-    left: -33px;
+    left: 0;
     top: -2px;
     background-image: url("../img/radio-off.svg");
     background-repeat: no-repeat;
@@ -1635,20 +1701,13 @@ body {
 
 .fat-filter:checked + label::before {
     background-image: url("../img/radio-on.svg");
+    background-size: 24px 21px;
 }
 
-.faty-filter .wrapper-filter {
-    padding: 7px 15px 9px;
-    margin-top: 6px;
-    margin-right: 0;
-}
-
-/*Стиль выпадающего списка при наведении*/
 .catalog-filters select:hover {
     color: #000000;
 }
 
-/*Стили для выпадающего списка в фильтре*/
 .catalog-filters option {
     font-size: 14px;
     line-height: 16px;
@@ -1656,38 +1715,51 @@ body {
     background-color: #ffffff;
 }
 
+.fillers {
+    margin: 0;
+    padding: px 10px 17px 0;
+}
+
 .fillers .wrapper-filter {
     padding: 0;
+    padding-left: 15px;
+    height: 36px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .fillers ul {
     margin: 0;
-    padding-left: 7px;
-    padding-top: 8px;
-    padding-right: 20px;
-    padding-bottom: 9px;
+    padding: 0;
 }
 
-.checklist {
-    padding-right: 4px;
-    padding-left: 25px;
+.checklist label {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    margin-right: 16px;
+    margin-top: 8px;
 }
 
 .fillers-checkbox + label::before {
     content:"";
-    position: absolute;
-    left: -32px;
-    top: 0;
-    width: 21px;
+    display: inline-block;
+    width: 24px;
     height: 21px;
+    margin-right: 10px;
     background-image: url("../img/checkbox-off.svg");
     background-repeat: no-repeat;
+    background-size: 21px 21px;
+    background-position: 0 0;
+    vertical-align: middle;
     opacity: 0.8;
 }
 
 .fillers-checkbox:checked + label::before {
     background-image: url("../img/checkbox-on.svg");
     background-repeat: no-repeat;
+    background-size: 24px 21px;
 }
 
 .fillers-checkbox:hover + label::before,
@@ -1702,7 +1774,6 @@ body {
     opacity: 0.4;
 }
 
-/*Стиль для кнопки в фильтрах*/
 .btn-filter,
 .btn-filter:visited,
 .btn-filter:focus {
@@ -1717,17 +1788,16 @@ body {
     padding: 0 29px;
     height: 32px;
     margin-top: 25px;
+    margin-left: 15px;
     outline: none;
 }
 
-/*Стиль кнопки в фильтрах при наведении*/
 .btn-filter:hover {
     color: #000000;
     background-color: #fbfcfb;
     background-image: none;
     box-shadow: 0 0 0 2px #ffffff;
 }
-    /*Стиль кнопки в фильтрах при нажатии*/
     
 .btn-filter:active {
     color: #000000;
@@ -1739,10 +1809,9 @@ body {
 
 .catalog {
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0.3), transparent 1px);
-    padding-bottom: 33px;
+    padding-bottom: 35px;
 }
-/*Стиль для пагинатора*/
-/*убираем маркеры списка*/
+
 .paginator-list {
     position: relative;
     display: flex;
@@ -1751,11 +1820,10 @@ body {
     padding: 0;
     margin: 0;
     margin-left: auto;
-    margin-top: 46px;
+    margin-top: 50px;
     list-style: none;
 }
 
-/*Ссылки в обычном состоянии и посещенном*/
 .pagination-item, 
 .pagination-item:visited {
     text-decoration: none;
@@ -1768,13 +1836,11 @@ body {
     margin-left: 3px;
 }
 
-/*Ссылки при наведении*/
 .pagination-item:hover {
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/*Ссылки при нажатии и текущая кнопка пагинатора*/
 .pagination-item:active,
 .pagination-item-current,
 .pagination-item-current:hover,
@@ -1824,75 +1890,4 @@ body {
 
 .next-page:active::after {
     background-image: url("../img/icon-right-small-black.svg");
-}
-
-.user-navigation-cart {
-    position: fixed;
-    top: 60px;
-    right: 26px;
-    padding: 15px 20px;
-    box-shadow: 0 10px 40px 6px rgba(0, 0, 0, 0.2);
-    font-size: 13px;
-    line-height: 16px;
-    font-weight: 400;
-}
-
-.user-navigation-cart td {
-    padding: 0;
-}
-
-.user-navigation-cart img {
-    float: left;
-    margin-right: 14px;
-    margin-left: 19px;
-    margin-bottom: 15px;
-}
-
-.user-navigation-cart p {
-    margin-left: 75px;
-    margin-right: 28px;
-    padding-bottom: 5px;
-}
-
-/*Стиль для итоговой цифры в корзине*/
-.amount td {
-    font-weight: 700;
-    text-align: right;
-    border-top: 1px solid #ccccc9;
-    padding-top: 18px;
-    padding-bottom: 15px;
-}
-
-.ice-price-cart {
-    color: #999999;
-    background-color: #f8f7f4;
-    margin-right: 33px;
-}
-
-.user-navigation-cart .btn {
-    padding: 9px 19px;
-    margin-left: 325px;
-}
-
-.delete-item {
-    font-size: 1px;
-    color: transparent;
-}
-
-.delete-item::before {
-    content: "";
-    position: absolute;
-    width: 11px;
-    height: 11px;
-    background-image: url("../img/cross-small.svg");
-    background-repeat: no-repeat;
-    left: 15px;
-}
-
-.row-cart-1::before {
-    top: 28px;
-}
-
-.row-cart-2::before {
-    top: 78px;
 }
