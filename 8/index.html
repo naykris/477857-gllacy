@@ -43,7 +43,7 @@
                               <section class="modal user-navigation-search">
                                  <h2 class="visually-hidden">Введите свой запрос для поиска</h2>
                                   <form>
-                                      <input type="search" id="search-field" name="search" placeholder="Что ищем?">
+                                      <input type="search" id="search-field" name="search" placeholder="Что ищем?" required>
                                       <label class="visually-hidden" for="search-field">Поиск</label>
                                   </form>
                              </section>
@@ -55,9 +55,9 @@
                                   <form action="https://echo.htmlacademy.ru" method="post">
                                       <fieldset>
                                           <legend class="visually-hidden">Вход в личный кабинет</legend>
-                                          <input type="email" id="email-field" name="email" placeholder="Электронная почта">
+                                          <input type="email" id="email-field" name="email" placeholder="Электронная почта" required>
                                           <label class="visually-hidden" for="email-field">Email</label><br>
-                                          <input type="password" id="password-field" name="password" placeholder="Пароль">
+                                          <input type="password" id="password-field" name="password" placeholder="Пароль" required>
                                           <label class="visually-hidden" for="password-field">Пароль</label>
                                           <button class="btn" value="login-button">Войти</button>
                                           <div class="login-wrapper">
@@ -171,7 +171,7 @@
                           <div>
                               <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
                               <form action="https://echo.htmlacademy.ru" method="post">
-                                  <input type="email" id="subscribe-field" name="email-subscribe" placeholder="Электронная почта">
+                                  <input type="email" id="subscribe-field" name="email-subscribe" placeholder="Электронная почта" required>
                                   <label class="visually-hidden" for="subscribe-field">Введите свой email, чтобы подписаться</label>
                                   <button class="btn" value="submit-subscribe">Отправить</button>
                               </form>
