@@ -38,7 +38,7 @@
                          <section class="modal user-navigation-search">
                               <h2 class="visually-hidden">Введите свой запрос для поиска</h2>
                               <form>
-                                  <input type="search" id="search-field" name="search" placeholder="Что ищем?">
+                                  <input type="search" id="search-field" name="search" placeholder="Что ищем?" required>
                                   <label class="visually-hidden" for="search-field">Поиск</label>
                               </form>
                          </section>
@@ -50,9 +50,9 @@
                               <form action="https://echo.htmlacademy.ru" method="post">
                                   <fieldset>
                                       <legend class="visually-hidden">Вход в личный кабинет</legend>
-                                      <input type="email" id="email-field" name="email" placeholder="Электронная почта">
+                                      <input type="email" id="email-field" name="email" placeholder="Электронная почта" required>
                                       <label class="visually-hidden" for="email-field">Email</label><br>
-                                      <input type="password" id="password-field" name="password" placeholder="Пароль">
+                                      <input type="password" id="password-field" name="password" placeholder="Пароль" required>
                                       <label class="visually-hidden" for="password-field">Пароль</label>
                                       <button class="btn" value="login-button">Войти</button>
                                       <div class="login-wrapper">
@@ -129,8 +129,8 @@
                      <div class="filter-range">
                          <div class="price-filter">Цена: 100 руб. &dash; 500 руб.</div>
                          <div class="price-controls">
-                             <label class="min-price">от <input type="text" name="min-price"></label>
-                             <label class="max-price">до <input type="text" name="max-price"></label>
+                             <label class="min-price">от <input type="text" name="min-price" value="100"></label>
+                             <label class="max-price">до <input type="text" name="max-price" value="500"></label>
                          </div>
                          <div class="range-controls">
                              <div class="scale">
